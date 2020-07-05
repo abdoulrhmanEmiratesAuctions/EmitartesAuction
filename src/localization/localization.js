@@ -86,7 +86,7 @@ export let strings = new LocalizedStrings({
     easyProcess: "عملية سهلة",
     easyProcessContent: "نحن نساعدك على توفير الوقت والجهد. نحن نتقن كيفية بيع سيارة بشكل خاص وتبسيط عملية بيع سيارة لجعلها خالية من المتاعب.",
     getTheBest: "احصل على أفضل عائد",
-    getTheBestContent: "Get the most money for your car. Reach serious buyers. Avoid lowball offers. Use our valuation tools for a better price when selling your car.",
+    getTheBestContent: "احصل على أكبر قدر من المال لسيارتك. الوصول إلى مشترين جادين. تجنب عروض كرة منخفضة. استخدم أدوات التقييم الخاصة بنا للحصول على سعر أفضل عند بيع سيارتك.",
     dedicatedTeam: "فريق متخصص",
     dedicatedTeamContent: "خبراء البائعون هنا لمساعدتك في كل خطوة على الطريق عبر البريد الإلكتروني أو الهاتف أو الدردشة طوال أيام الأسبوع! فهي تساعدك في العثور على مشترين حقيقيين لسيارتك وإتمام صفقتك بسرعة.",
     getPreparedBeforeCall: "استعد قبل اتصالنا",

@@ -20,6 +20,9 @@ export const CardStyle = styled.div`
   color: #595f6f;
   margin-top: 50px;
   width: 100%;
+  @media (max-width: 900px) {
+    text-align: center;
+}
 }
 .card-content{
     font-family: Roboto;
