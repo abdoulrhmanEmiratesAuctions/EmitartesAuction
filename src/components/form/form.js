@@ -133,7 +133,7 @@ class Form extends Component {
     }
     componentWillReceiveProps(nextProps) {
         if (!this.props.car.response && nextProps.car.response) {
-            if (nextProps.car.response.message == "Network Error") {
+            if (nextProps.car.response.message ==="Network Error") {
                 this.setState({responseError: true});
             } else {
                 this.setState({ responseSuccess: true, disabled: false });

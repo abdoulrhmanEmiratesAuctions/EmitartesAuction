@@ -5,7 +5,7 @@ import { observableLang } from '../../services/lang';
 export default class MetaTags extends Component {
     componentDidMount() {
         observableLang.subscribe((Res) => {
-            if (localStorage.getItem("lang") == 'ar') {
+            if (localStorage.getItem("lang") === 'ar') {
                 this.renderArabicLang();
             } else {
                 this.renderEnglishLang();
@@ -70,7 +70,7 @@ export default class MetaTags extends Component {
     render() {
         return (
             <div>
-                {localStorage.getItem("lang") == 'ar' ? this.renderArabicLang() : this.renderEnglishLang()}
+                {localStorage.getItem("lang") === 'ar' ? this.renderArabicLang() : this.renderEnglishLang()}
             </div>
         )
     }
