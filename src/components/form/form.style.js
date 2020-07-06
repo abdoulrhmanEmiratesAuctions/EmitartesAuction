@@ -201,4 +201,78 @@ export const FormStyle = styled.div`
     margin: 5px 10px;
 
 }
+.error-toast{
+  border-radius: 5px;
+  background-color: #ec1c24;
+  width: 80%;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+  padding: 10px 30px;
+  margin-bottom: 30px;
+}
+.card-success{
+    min-height: 500px;
+  box-shadow: 20px 20px 80px 0 rgba(2, 8, 22, 0.1);
+  background-color: #ffffff;
+}
+.card-header{
+    text-align: center;
+    img{
+        margin-top: 100px;
+        margin-bottom: 20px;
+        height: 50px;
+        object-fit: contain;
+    }
+}
+
+.done-desc{
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.42px;
+  text-align: center;
+  color: #000000;
+    }
+    .done-content{
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.63;
+  letter-spacing: -0.33px;
+  text-align: center;
+  color: #595f6f;
+    }
+
+
+.btn-submit-resend{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  
+    .btn-send{
+        box-shadow: 20px 20px 60px 0 rgba(0, 0, 0, 0.4);
+        text-transform: none;
+    width: 250px;
+        height: 50px;
+        border-radius: 5px;
+        background-color: #ec1c24;
+        border: 1px solid #ec1c24;
+        color: #fff;
+        font-size: 18px;
+        font-family: Almarai;
+        align-self: center;
+       
+
+    }
+}
 `

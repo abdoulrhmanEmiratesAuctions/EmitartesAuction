@@ -1,14 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Home from './pages/home/home';
-import './App.css'
+import './App.css';
+import { Provider } from 'react-redux';
+import { createStoreWithMiddleware } from './redux/index';
+
 function App() {
   return (
     <div className="">
-      <BrowserRouter   >
+      <Provider store={createStoreWithMiddleware}>
+        <BrowserRouter   >
           <Route exact path="/" component={Home} />
         </BrowserRouter>
+      </Provider>
     </div>
   );
 }

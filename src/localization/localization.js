@@ -52,7 +52,10 @@ export let strings = new LocalizedStrings({
     possessionCertificateSubHeader: "(Dubai certificate or transfer to Dubai)",
     bankDetails: "Bank account details",
     buyNewAndUsed: "Buy new and used cars in UAE, shipping and delivery service are available, Sell your car at the highest price online with no worries visiting cars show rooms.",
-    followTheFirstAndTheLargest: "Follow the first and the largest online auction in UAE and Middle East"
+    followTheFirstAndTheLargest: "Follow the first and the largest online auction in UAE and Middle East",
+    errorMsgResponse: "* All fields are required to be filled",
+    successHeader: "Your inquiry has been sent successfully",
+    successContent: "Your message has been sent successfully. Thank you for your enquiry. It has been forwarded to the relevant department and will be dealt within 24 hours"
  },
  ar: {
      lang: "English",
@@ -105,6 +108,10 @@ export let strings = new LocalizedStrings({
     possessionCertificateSubHeader: "(شهادة دبي أو التحويل إلى دبي)",
     bankDetails: "تفاصيل الحساب المصرفي",
     buyNewAndUsed: "اشترِ سيارات جديدة ومستعملة في الإمارات العربية المتحدة ، وتتوفر خدمة الشحن والتسليم ، وقم ببيع سيارتك بأعلى سعر عبر الإنترنت دون قلق من زيارة صالات عرض السيارات.",
-    followTheFirstAndTheLargest: "اتبع أول وأكبر مزاد على الإنترنت في الإمارات العربية المتحدة والشرق الأوسط"
+    followTheFirstAndTheLargest: "اتبع أول وأكبر مزاد على الإنترنت في الإمارات العربية المتحدة والشرق الأوسط",
+    errorMsgResponse: "* يجب ملء جميع الحقول",
+    successHeader: "تم إرسال استفسارك بنجاح",
+    successContent: "تم ارسال رسالتك بنجاح. شكرا لاستفسارك. تم تحويله إلى القسم المختص وسيتم التعامل معه خلال 24 ساعة"
+
  }
 });

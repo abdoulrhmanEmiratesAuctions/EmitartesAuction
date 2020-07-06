@@ -33,7 +33,7 @@ export default class Header extends Component {
         this.setState({lang: localStorage.getItem("lang") || 'en'}, () => {
             if (this.state.lang) {
                 strings.setLanguage(this.state.lang);
-                if (this.state.lang == 'en') {
+                if (this.state.lang === 'en') {
                     document.body.style.direction = "ltr";
                 } else {
                     document.body.style.direction = "rtl";

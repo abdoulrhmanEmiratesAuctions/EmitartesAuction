@@ -2,10 +2,42 @@ import React, { Component } from 'react'
 import { FormStyle } from './form.style'
 import { Grid, Button } from '@material-ui/core'
 import { strings } from '../../localization/localization'
+import { validationSellFom, stateFields } from '../../validations/sell-form';
+import { sellCarAction } from '../../redux/actions/sell.action';
+import { connect } from 'react-redux';
 
-export default class Form extends Component {
-    renderInputs = () => {
+class Form extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            error: {},
+            responseError: false,
+            responseSuccess: false,
+            disabled: false
+        }
+    }
+    onChangeValueInput = (value, state) => {
+        if (value) {
+            this.setState({ [state]: value, error: { ...this.state.error, [state]: "" } });
+        } else {
+            this.setState({ error: { ...this.state.error, [state]: 'sasda' } })
+        }
+    }
 
+    renderInputs = (type, state, placeholder) => {
+        return (
+            <div className="form-group">
+                <div className="label"><label className="">{placeholder}</label></div>
+                <input type={type}
+                    style={{
+                        borderColor: this.state.error[state] ? '#ec1c24' : '',
+                        backgroundColor: this.state.error[state] ? 'rgba(236, 28, 36, 0.04)' : ''
+                    }}
+                    onChange={(e) => this.onChangeValueInput(e.target.value, state)}
+                    onBlur={(e) => this.onChangeValueInput(e.target.value, state)}
+                    className="input" placeholder={placeholder} />
+            </div>
+        )
     }
     render() {
         return (
@@ -46,41 +78,45 @@ export default class Form extends Component {
                         container
                         direction="row"
                         style={{ padding: '20px' }}
-
-
                     >
                         <div className="inputs">
-                            <div className="header-input">  {strings.enterCarDetail}</div>
 
-                            <div className="form-group">
-                                <div className="label"><label className="">{strings.carBrand}</label></div>
-                                <input type="text" className="input" placeholder={strings.carBrand} />
-                            </div>
+                            {
+                                this.state.responseSuccess ?
+                                    <div className="card-success">
+                                        <div className="card-header">
+                                            <img src={require('../../assets/images/3739DED4-8F85-4F9D-BE06-DE2E456DD8E3.svg')} />
+                                        </div>
 
-                            <div className="form-group">
-                                <div className="label"><label className="">{strings.carModel}</label></div>
-                                <input type="text" className="input" placeholder={strings.carModel} />
-                            </div>
-                            <div className="label"></div>
-                            <div className="header-input">  {strings.enterYourContactInfo}</div>
+                                        <div className="card-content">
+                                            <p className="done-desc">{strings.successHeader}</p>
+                                            <p className="done-content">{strings.successContent}</p>
+                                        </div>
 
-                            <div className="form-group">
-                                <div className="label"><label className="">{strings.yourFullName}</label></div>
-                                <input type="text" className="input" placeholder={strings.yourFullName} />
-                            </div>
+                                        <div className="btn-submit-resend">
+                                            <Button className="btn-send" variant="contained" onClick={() => this.onPressReSend()}>{strings.sendYourInquiry}
+                                                <i className="fa fa-angle-right	"></i>
+                                            </Button>
+                                        </div>
+                                    </div>
+                                    :
+                                    <div>
+                                        {this.state.responseError ? <div className="error-toast">{strings.errorMsgResponse}</div> : ""}
+                                        <div className="header-input">  {strings.enterCarDetail}</div>
+                                        {this.renderInputs("text", "brand", strings.carBrand)}
+                                        {this.renderInputs("number", "modal", strings.carModel)}
+                                        <div className="label"></div>
+                                        <div className="header-input" >  {strings.enterYourContactInfo}</div>
+                                        {this.renderInputs("text", "fullName", strings.yourFullName)}
+                                        {this.renderInputs("number", "mobile", strings.yourMobileNumber)}
 
-                            <div className="form-group">
-                                <div className="label"><label className="">{strings.yourMobileNumber}</label></div>
-                                <input type="text" className="input" placeholder={strings.yourMobileNumber} />
-                            </div>
-
-                        </div>
-
-                        <div className="btn-submit">
-                            <Button className="btn-send" variant="contained">{strings.sendYourInquiry}
-                           <i className="fa fa-angle-right	"></i>
-                            </Button>
-
+                                        <div className="btn-submit">
+                                            <Button disabled={this.state.disabled} className="btn-send" variant="contained" onClick={() => this.onPressSend()}>{strings.sendYourInquiry}
+                                                <i className="fa fa-angle-right	"></i>
+                                            </Button>
+                                        </div>
+                                    </div>
+                            }
                         </div>
                     </Grid>
 
@@ -88,4 +124,33 @@ export default class Form extends Component {
             </FormStyle>
         )
     }
+    componentWillReceiveProps(nextProps) {
+        if (!this.props.car.response && nextProps.car.response) {
+            this.setState({ responseSuccess: true, disabled: false });
+        }
+    }
+    onPressSend = () => {
+        const error = validationSellFom(this.state);
+        this.setState({ error: error, disabled: true })
+        if (this.state.brand && this.state.modal && this.state.fullName && this.state.mobile) {
+            const sellData = stateFields(this.state);
+            this.props.sellCarAction(sellData);
+        } else {
+            this.setState({ responseError: true, responseSuccess: false, disabled: false })
+        }
+    }
+    onPressReSend = () => {
+        this.setState({ responseSuccess: false, disabled: false, brand: "", modal: "", mobile: "", fullName: "", error: {} });
+    }
 }
+function mapDispatchToProps(dispatch) {
+    return {
+        sellCarAction: (data) => dispatch(sellCarAction(data)),
+    }
+}
+function mapStateToProps(state) {
+    console.log(state);
+
+    return { car: state.sellCar }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Form)
