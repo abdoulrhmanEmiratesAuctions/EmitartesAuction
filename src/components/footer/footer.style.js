@@ -86,7 +86,7 @@ export const FooterStyle = styled.div`
     i{
         color: #fff;
     font-size: 22px;
-    margin: 7px;
+    vertical-align: -webkit-baseline-middle;
     }
     }
 

@@ -5,6 +5,8 @@ import { strings } from '../../localization/localization'
 import { validationSellFom, stateFields } from '../../validations/sell-form';
 import { sellCarAction } from '../../redux/actions/sell.action';
 import { connect } from 'react-redux';
+import { observableLang } from '../../services/lang';
+import { fontForLang } from '../../helper/font-famliy';
 
 class Form extends Component {
     constructor(props) {
@@ -15,6 +17,10 @@ class Form extends Component {
             responseSuccess: false,
             disabled: false
         }
+    }
+    componentDidMount() {
+        observableLang.subscribe((Res) => this.setState({}));
+
     }
     onChangeValueInput = (value, state) => {
         if (value) {
@@ -27,9 +33,10 @@ class Form extends Component {
     renderInputs = (type, state, placeholder) => {
         return (
             <div className="form-group">
-                <div className="label"><label className="">{placeholder}</label></div>
-                <input type={type}
+                <div className="label"><label className="" style={{fontFamily: fontForLang()}}>{placeholder}</label></div>
+                <input  type={type}
                     style={{
+                        fontFamily: fontForLang(),
                         borderColor: this.state.error[state] ? '#ec1c24' : '',
                         backgroundColor: this.state.error[state] ? 'rgba(236, 28, 36, 0.04)' : ''
                     }}
@@ -43,8 +50,8 @@ class Form extends Component {
         return (
             <FormStyle id="form">
                 <div className="header">
-                    <h2>{strings.startToday}</h2>
-                    <p>{strings.youAreJustOneClick}</p>
+                    <h2 style={{fontFamily: fontForLang()}}>{strings.startToday}</h2>
+                    <p style={{fontFamily: fontForLang()}}>{strings.youAreJustOneClick}</p>
                 </div>
                 <Grid container spacing={0} className="container" >
                     <Grid
@@ -64,12 +71,12 @@ class Form extends Component {
                             </div>
                         </div>
                         <div className="video-desc">
-                            <h1>{strings.whyYouShouldSellYourCar}</h1>
-                            <h6>{strings.weSupportYouFromStartToFinish} </h6>
-                            <h5>
+                            <h1 style={{fontFamily: fontForLang()}}>{strings.whyYouShouldSellYourCar}</h1>
+                            <h6 style={{fontFamily: fontForLang()}}>{strings.weSupportYouFromStartToFinish} </h6>
+                            <h5 style={{fontFamily: fontForLang()}}>
                                 {strings.weHaveStreamlind}
                             </h5>
-                            <p>{strings.readyToSell}</p>
+                            <p style={{fontFamily: fontForLang()}}>{strings.readyToSell}</p>
                         </div>
                     </Grid>
 
@@ -89,29 +96,29 @@ class Form extends Component {
                                         </div>
 
                                         <div className="card-content">
-                                            <p className="done-desc">{strings.successHeader}</p>
-                                            <p className="done-content">{strings.successContent}</p>
+                                            <p style={{fontFamily: fontForLang()}} className="done-desc">{strings.successHeader}</p>
+                                            <p style={{fontFamily: fontForLang()}} className="done-content">{strings.successContent}</p>
                                         </div>
 
                                         <div className="btn-submit-resend">
-                                            <Button className="btn-send" variant="contained" onClick={() => this.onPressReSend()}>{strings.sendYourInquiry}
+                                            <Button style={{fontFamily: fontForLang()}} className="btn-send" variant="contained" onClick={() => this.onPressReSend()}>{strings.sendYourInquiry}
                                                 <i className="fa fa-angle-right	"></i>
                                             </Button>
                                         </div>
                                     </div>
                                     :
                                     <div>
-                                        {this.state.responseError ? <div className="error-toast">{strings.errorMsgResponse}</div> : ""}
-                                        <div className="header-input">  {strings.enterCarDetail}</div>
+                                        {this.state.responseError ? <div style={{fontFamily: fontForLang()}}  className="error-toast">{strings.errorMsgResponse}</div> : ""}
+                                        <div style={{fontFamily: fontForLang()}} className="header-input">  {strings.enterCarDetail}</div>
                                         {this.renderInputs("text", "brand", strings.carBrand)}
                                         {this.renderInputs("number", "modal", strings.carModel)}
                                         <div className="label"></div>
-                                        <div className="header-input" >  {strings.enterYourContactInfo}</div>
+                                        <div className="header-input" style={{fontFamily: fontForLang()}} >  {strings.enterYourContactInfo}</div>
                                         {this.renderInputs("text", "fullName", strings.yourFullName)}
                                         {this.renderInputs("number", "mobile", strings.yourMobileNumber)}
 
                                         <div className="btn-submit">
-                                            <Button disabled={this.state.disabled} className="btn-send" variant="contained" onClick={() => this.onPressSend()}>{strings.sendYourInquiry}
+                                            <Button style={{fontFamily: fontForLang()}} disabled={this.state.disabled} className="btn-send" variant="contained" onClick={() => this.onPressSend()}>{strings.sendYourInquiry}
                                                 <i className="fa fa-angle-right	"></i>
                                             </Button>
                                         </div>
@@ -126,7 +133,12 @@ class Form extends Component {
     }
     componentWillReceiveProps(nextProps) {
         if (!this.props.car.response && nextProps.car.response) {
-            this.setState({ responseSuccess: true, disabled: false });
+            if (nextProps.car.response.message == "Network Error") {
+                this.setState({responseError: true});
+            } else {
+                this.setState({ responseSuccess: true, disabled: false });
+
+            }
         }
     }
     onPressSend = () => {

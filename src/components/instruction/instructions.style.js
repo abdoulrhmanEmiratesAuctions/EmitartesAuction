@@ -51,7 +51,7 @@ export const InstructionStyle = styled.div`
         z-index: 99999999;
 
     .btn-start{
-        width: 147px;
+        width: 180px;
         height: 48px;
         border-radius: 5px;
         box-shadow: 20px 20px 60px 0 rgba(0, 0, 0, 0.4);
@@ -115,8 +115,9 @@ export const InstructionStyle = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    @media (max-width: 600px) {
+    @media (max-width: 900px) {
     padding: 50px 10px;
+    height: 365px;
 }
       }
 
@@ -203,4 +204,9 @@ export const InstructionStyle = styled.div`
     }
 }
 
+.fa-angle-down{
+    color: #FFFFFF;
+    margin-left: 8px;
+    
+}
 `

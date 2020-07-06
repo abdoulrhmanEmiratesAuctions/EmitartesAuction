@@ -2,14 +2,16 @@ import React, { Component } from 'react'
 import { OurCallStyle } from './our-call.style'
 import { Grid } from '@material-ui/core'
 import { strings } from '../../localization/localization'
+import { fontForLang } from '../../helper/font-famliy'
 
 export default class OurCall extends Component {
+ 
     render() {
         return (
             <OurCallStyle>
                 <div className="header-call">
-                    <h1>{strings.getPreparedBeforeCall}</h1>
-                    <p>{strings.requiredDocs} </p>
+                    <h1 style={{fontFamily: fontForLang()}}>{strings.getPreparedBeforeCall}</h1>
+                    <p style={{fontFamily: fontForLang()}}>{strings.requiredDocs} </p>
                 </div>
                 <Grid container spacing={0} className="container" >
                     <Grid
@@ -17,13 +19,16 @@ export default class OurCall extends Component {
                         container
                         direction="row"
                         style={{ padding: '20px' }}>
-                        
-                        <ul className="list">
+                      
+
+                        <ul style={{fontFamily: fontForLang()}} className="list">
                             <li>{strings.doc1}</li>
                             <li>{strings.doc2}</li>
                             <li>{strings.doc3}</li>
                             <li>{strings.doc4}</li>
                         </ul>
+                     
+
                     </Grid>
 
                     <Grid
@@ -32,7 +37,7 @@ export default class OurCall extends Component {
                         direction="row"
                         style={{ padding: '20px' }}>
                         
-                        <ul className="list">
+                        <ul style={{fontFamily: fontForLang()}} className="list">
                             <li>{strings.doc5}</li>
                             <li>{strings.doc6}</li>
                             <li>{strings.doc7}</li>

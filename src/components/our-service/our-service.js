@@ -3,14 +3,15 @@ import { OurServiceStyle } from './our-service.style'
 import { Button, Grid } from '@material-ui/core'
 import { CardStyle } from '../../styles/card.style'
 import { strings } from '../../localization/localization'
+import { fontForLang } from '../../helper/font-famliy'
 
 export default class OurService extends Component {
     render() {
         return (
             <OurServiceStyle>
                 <div className="header-service">
-                    <h1>{strings.whyOurService}</h1>
-                    <p>{strings.weOperates24Hours} </p>
+                    <h1 style={{fontFamily: fontForLang()}}>{strings.whyOurService}</h1>
+                    <p style={{fontFamily: fontForLang()}}>{strings.weOperates24Hours} </p>
                 </div>
 
                 <Grid container className="container" >
@@ -39,8 +40,8 @@ export default class OurService extends Component {
                                     direction="row"
                                     justify="center"
                                     alignItems="center">
-                                    <div className="card-header">{strings.easyProcess}</div>
-                                    <div className="card-content">{strings.easyProcessContent}</div>
+                                    <div style={{fontFamily: fontForLang()}} className="card-header">{strings.easyProcess}</div>
+                                    <div style={{fontFamily: fontForLang()}} className="card-content">{strings.easyProcessContent}</div>
 
                                 </Grid>
                             </Grid>
@@ -74,8 +75,8 @@ export default class OurService extends Component {
                                     direction="row"
                                     justify="center"
                                     alignItems="center">
-                                    <div className="card-header">{strings.getTheBest}</div>
-                                    <div className="card-content">{strings.getTheBestContent}</div>
+                                    <div style={{fontFamily: fontForLang()}} className="card-header">{strings.getTheBest}</div>
+                                    <div style={{fontFamily: fontForLang()}} className="card-content">{strings.getTheBestContent}</div>
 
                                 </Grid>
                             </Grid>
@@ -108,8 +109,8 @@ export default class OurService extends Component {
                                     direction="row"
                                     justify="center"
                                     alignItems="center">
-                                    <div className="card-header">{strings.dedicatedTeam}</div>
-                                    <div className="card-content">{strings.dedicatedTeamContent}</div>
+                                    <div style={{fontFamily: fontForLang()}} className="card-header">{strings.dedicatedTeam}</div>
+                                    <div style={{fontFamily: fontForLang()}} className="card-content">{strings.dedicatedTeamContent}</div>
                                 </Grid>
                             </Grid>
                         </CardStyle>

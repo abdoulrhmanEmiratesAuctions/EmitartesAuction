@@ -2,13 +2,14 @@ import React, { Component } from 'react'
 import { FooterStyle } from "./footer.style";
 import { Grid, Container } from '@material-ui/core';
 import { strings } from '../../localization/localization';
+import { fontForLang } from '../../helper/font-famliy';
 export default class Footer extends Component {
     render() {
         return (
             <FooterStyle>
                 <div className="docs">
                     <div className="header-docs">
-                        <h1>{strings.requiredDoc}</h1>
+                        <h1 style={{fontFamily: fontForLang()}}>{strings.requiredDoc}</h1>
 
                     </div>
 
@@ -21,7 +22,7 @@ export default class Footer extends Component {
                                 direction="row"
                                 justify="center"
                                 alignItems="center">
-                                <p className="desc">{strings.emiratesId}</p>
+                                <p style={{fontFamily: fontForLang()}} className="desc">{strings.emiratesId}</p>
 
 
                             </Grid>
@@ -32,8 +33,8 @@ export default class Footer extends Component {
                                 justify="center"
                                 alignItems="center">
                                 <div>
-                                    <p className="desc">{strings.possessionCertificate} </p>
-                                    <p className="sub-desc">{strings.possessionCertificateSubHeader}</p>
+                                    <p style={{fontFamily: fontForLang() , textAlign:'center'}} className="desc">{strings.possessionCertificate} </p>
+                                    <p style={{fontFamily: fontForLang()}} className="sub-desc">{strings.possessionCertificateSubHeader}</p>
                                 </div>
 
 
@@ -46,7 +47,7 @@ export default class Footer extends Component {
                                 direction="row"
                                 justify="center"
                                 alignItems="center">
-                                <p className="desc">{strings.bankDetails}</p>
+                                <p style={{fontFamily: fontForLang()}} className="desc">{strings.bankDetails}</p>
 
 
                             </Grid>
@@ -68,7 +69,7 @@ export default class Footer extends Component {
                                 <div className="logo">
                                     <img src={require('../../assets/images/E1E48E11-3B18-46C3-A7FF-254C0D7664D1.svg')} />
 
-                                    <p className="desc-footer">{strings.buyNewAndUsed}</p>
+                                    <p style={{fontFamily: fontForLang()}} className="desc-footer">{strings.buyNewAndUsed}</p>
                                 </div>
 
 
@@ -80,13 +81,13 @@ export default class Footer extends Component {
                                 justify="center"
                                 alignItems="center">
                                 <div>
-                                    <p className="p-follow">{strings.followTheFirstAndTheLargest}</p>
+                                    <p style={{fontFamily: fontForLang()}} className="p-follow">{strings.followTheFirstAndTheLargest}</p>
                                     <div className="icons">
-                                        <span className="icon">  <i className="fab fa-facebook"></i></span>
-                                        <span className="icon"> <i className="fab fa-twitter"></i></span>
-                                        <span className="icon"><i className="fab fa-youtube"></i></span>
-                                        <span className="icon"><i className="fab fa-instagram"></i></span>
-                                       <span className="icon"> <i className="fab fa-google"></i></span>
+                                        <a href="https://www.facebook.com/emiratesauction" target="_blank" className="icon">  <i className="fab fa-facebook"></i></a>
+                                        <a href="https://twitter.com/emiratesauction" target="_blank" className="icon"> <i className="fab fa-twitter"></i></a>
+                                        <a href="https://twitter.com/emiratesauction" target="_blank" className="icon"><i className="fab fa-youtube"></i></a>
+                                        <a href="https://www.instagram.com/emiratesauction/" target="_blank" className="icon"><i className="fab fa-instagram"></i></a>
+                                       <a href="https://plus.google.com/+EmiratesauctionUAE" target="_blank" className="icon"> <i className="fab fa-google"></i></a>
 
                                     </div>
                                 </div>

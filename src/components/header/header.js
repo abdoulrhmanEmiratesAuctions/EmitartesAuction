@@ -16,6 +16,7 @@ export default class Header extends Component {
         if (lang === 'en') {
             strings.setLanguage('ar');
             document.body.style.direction = "rtl";
+
              localStorage.setItem("lang", 'ar');
              getLang('ar')
 

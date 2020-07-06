@@ -5,6 +5,7 @@ import { sellCarActionSuccess, sellCarActionFailure } from '../redux/actions/sel
 
 export function* sellCarSaga(action) {
     try {
+        debugger;
         const response = yield call(SellService.sellCar, action.data);
         yield put(sellCarActionSuccess({ response: response }))
     } catch (error) {

@@ -37,7 +37,22 @@ margin: 150px 0px;
     padding: 50px 10px;
 }
 }
-.list{
+
+ul{
+  list-style: none;
+}
+ul li::before {
+  content: "⬤";
+  color: #ec1c24;
+  font-weight: bold;
+  display: inline-block; 
+  width: 1em;
+  margin: 0px 10px;
+  
+}
+
+
+${'' /* .list{
     list-style: none;
     margin: 0px;
 
@@ -61,7 +76,7 @@ margin: 150px 0px;
   }
 
     }
-}
+} */}
 
 
 
