@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
 export const FormStyle = styled.div`
+right-margin : {
+
+    margin-right: 7px;
+}
 .header{
     margin-top: 150px;
     h2{
@@ -178,7 +182,8 @@ export const FormStyle = styled.div`
 .btn-submit{
     margin-top: 50px;
     @media (max-width: 900px) {
-        margin: 50px auto;
+       display:flex;
+       justify-content:center;
 
         }
     .btn-send{
@@ -198,6 +203,10 @@ export const FormStyle = styled.div`
     }
 }
 .fa-angle-right{
+    margin: 5px 10px;
+
+}
+.fa-angle-left{
     margin: 5px 10px;
 
 }
@@ -274,5 +283,7 @@ export const FormStyle = styled.div`
        
 
     }
+
+   
 }
 `

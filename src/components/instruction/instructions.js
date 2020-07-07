@@ -82,7 +82,7 @@ export default class Instructions extends Component {
 
                                 <div className="image-red">
                                     <div className="content-sold">
-                                        <img className="Bid_ic" src={require('../../assets/images/5650F6AA-AA66-48A8-B980-5AEF5F378141 (1).svg')} />
+                                        <img className="Bid_ic" alt="image_7" src={require('../../assets/images/5650F6AA-AA66-48A8-B980-5AEF5F378141 (1).svg')} />
 
                                         <h2 style={{fontFamily: fontForLang()}} className="header-sold">{strings.yourCarWillBeSold}</h2>
                                         <p style={{fontFamily: fontForLang()}} className="desc-sold">{strings.startPriceItWillBeSold}</p>

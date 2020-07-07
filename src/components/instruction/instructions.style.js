@@ -122,8 +122,7 @@ export const InstructionStyle = styled.div`
       }
 
 .Bg-Circle{
-    width: 50px;
-  height: 50px;
+  padding:25px;
   border-radius: 50%;
   box-shadow: 20px 20px 60px 0 rgba(0, 0, 0, 0.4);
   background-image: linear-gradient(225deg, #ec1c24, #f91c3d);
@@ -201,6 +200,10 @@ export const InstructionStyle = styled.div`
         letter-spacing: -0.42px;
         text-align: center;
         color: #ffffff;
+
+        @media(max-width: 600px){
+            margin: 5px;
+        }
     }
 }
 

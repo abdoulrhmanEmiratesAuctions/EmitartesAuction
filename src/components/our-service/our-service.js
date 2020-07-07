@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { OurServiceStyle } from './our-service.style'
-import { Button, Grid } from '@material-ui/core'
+import { Grid } from '@material-ui/core'
 import { CardStyle } from '../../styles/card.style'
 import { strings } from '../../localization/localization'
 import { fontForLang } from '../../helper/font-famliy'
@@ -32,7 +32,7 @@ export default class OurService extends Component {
                                     direction="row"
                                     justify="center"
                                     alignItems="center">
-                                    <img className="image-card" src={require('../../assets/images/6290918D-DB2D-469E-B550-27578DFBB2B9.svg')} />
+                                    <img alt="image_4" className="image-card" src={require('../../assets/images/6290918D-DB2D-469E-B550-27578DFBB2B9.svg')} />
                                 </Grid>
                                 <Grid
                                     item xs={12} lg={9}
@@ -65,7 +65,7 @@ export default class OurService extends Component {
                                     direction="row"
                                     justify="center"
                                     alignItems="center">
-                                    <img className="image-card" src={require('../../assets/images/C2398076-9AAD-46D9-B070-3CF00B8BB99C.svg')} />
+                                    <img alt="image_5" className="image-card" src={require('../../assets/images/C2398076-9AAD-46D9-B070-3CF00B8BB99C.svg')} />
 
 
                                 </Grid>
@@ -99,7 +99,7 @@ export default class OurService extends Component {
                                     direction="row"
                                     justify="center"
                                     alignItems="center">
-                                    <img className="image-card" src={require('../../assets/images/4C79659C-D5EF-4342-8CB8-2829509942BD.svg')} />
+                                    <img alt="image_6"className="image-card" src={require('../../assets/images/4C79659C-D5EF-4342-8CB8-2829509942BD.svg')} />
 
 
                                 </Grid>

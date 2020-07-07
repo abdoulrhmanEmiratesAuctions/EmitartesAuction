@@ -8,6 +8,10 @@ export const CardStyle = styled.div`
   min-height: 247px;
   padding: 0px 30px;
   margin-top: 50px;
+  @media(max-width: 900px){
+    padding-bottom: 20px;
+    text-align: center;
+  }
 
 .card-header{
     font-family: Roboto;

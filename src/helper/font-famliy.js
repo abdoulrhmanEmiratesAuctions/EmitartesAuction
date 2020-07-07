@@ -5,3 +5,4 @@ export const fontForLang = () => {
         return 'Almarai'
     }
 }
+

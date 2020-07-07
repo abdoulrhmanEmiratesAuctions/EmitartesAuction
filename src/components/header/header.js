@@ -54,7 +54,7 @@ export default class Header extends Component {
     render() {
         return (
             <HeaderStyle>
-                <img src={require('../../assets/images/E1E48E11-3B18-46C3-A7FF-254C0D7664D1.svg')} />
+                <img alt="image_4" src={require('../../assets/images/E1E48E11-3B18-46C3-A7FF-254C0D7664D1.svg')} />
 
                 <Button className="btn-lng" color="secondary" variant="contained" onClick={() => {this.onPressLang()}}>{strings.lang}</Button>
 

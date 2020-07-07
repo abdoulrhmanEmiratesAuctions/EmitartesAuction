@@ -67,7 +67,7 @@ export default class Footer extends Component {
                                 justify="center"
                                 alignItems="center">
                                 <div className="logo">
-                                    <img src={require('../../assets/images/E1E48E11-3B18-46C3-A7FF-254C0D7664D1.svg')} />
+                                    <img alt="image_1" src={require('../../assets/images/E1E48E11-3B18-46C3-A7FF-254C0D7664D1.svg')} />
 
                                     <p style={{fontFamily: fontForLang()}} className="desc-footer">{strings.buyNewAndUsed}</p>
                                 </div>
@@ -83,11 +83,11 @@ export default class Footer extends Component {
                                 <div>
                                     <p style={{fontFamily: fontForLang()}} className="p-follow">{strings.followTheFirstAndTheLargest}</p>
                                     <div className="icons">
-                                        <a href="https://www.facebook.com/emiratesauction" target="_blank" className="icon">  <i className="fab fa-facebook"></i></a>
-                                        <a href="https://twitter.com/emiratesauction" target="_blank" className="icon"> <i className="fab fa-twitter"></i></a>
-                                        <a href="https://twitter.com/emiratesauction" target="_blank" className="icon"><i className="fab fa-youtube"></i></a>
-                                        <a href="https://www.instagram.com/emiratesauction/" target="_blank" className="icon"><i className="fab fa-instagram"></i></a>
-                                       <a href="https://plus.google.com/+EmiratesauctionUAE" target="_blank" className="icon"> <i className="fab fa-google"></i></a>
+                                        <a href="https://www.facebook.com/emiratesauction"  rel="noopener noreferrer"   target="_blank" className="icon">  <i className="fab fa-facebook"></i></a>
+                                        <a href="https://twitter.com/emiratesauction"  rel="noopener noreferrer"   target="_blank" className="icon"> <i className="fab fa-twitter"></i></a>
+                                        <a href="https://twitter.com/emiratesauction"  rel="noopener noreferrer"   target="_blank" className="icon"><i className="fab fa-youtube"></i></a>
+                                        <a href="https://www.instagram.com/emiratesauction/"  rel="noopener noreferrer"   target="_blank" className="icon"><i className="fab fa-instagram"></i></a>
+                                       <a href="https://plus.google.com/+EmiratesauctionUAE"  rel="noopener noreferrer"   target="_blank" className="icon"> <i className="fab fa-google"></i></a>
 
                                     </div>
                                 </div>

@@ -17,7 +17,10 @@ padding: 150px 0px;
   color: #000000;
     }
     p{
-        font-family: Roboto;
+        @media(max-width: 600px){
+            margin: 5px;
+        }
+  font-family: Roboto;
   font-size: 18px;
   font-weight: normal;
   font-stretch: normal;

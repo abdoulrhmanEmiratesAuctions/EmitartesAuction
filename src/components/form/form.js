@@ -7,6 +7,7 @@ import { sellCarAction } from '../../redux/actions/sell.action';
 import { connect } from 'react-redux';
 import { observableLang } from '../../services/lang';
 import { fontForLang } from '../../helper/font-famliy';
+import {iconHandler} from '../../helper/angle-icon-handler';
 
 class Form extends Component {
     constructor(props) {
@@ -66,7 +67,7 @@ class Form extends Component {
                     >
                         <div className="image-video">
                             <div className="Bg-Circle">
-                                <img className="icon-play" src={require('../../assets/images/18225C47-54D9-4099-94F6-94E2EC837565.svg')} />
+                                <img alt="image_2" className="icon-play" src={require('../../assets/images/18225C47-54D9-4099-94F6-94E2EC837565.svg')} />
 
                             </div>
                         </div>
@@ -92,7 +93,7 @@ class Form extends Component {
                                 this.state.responseSuccess ?
                                     <div className="card-success">
                                         <div className="card-header">
-                                            <img src={require('../../assets/images/3739DED4-8F85-4F9D-BE06-DE2E456DD8E3.svg')} />
+                                            <img alt="image_3" src={require('../../assets/images/3739DED4-8F85-4F9D-BE06-DE2E456DD8E3.svg')} />
                                         </div>
 
                                         <div className="card-content">
@@ -102,7 +103,7 @@ class Form extends Component {
 
                                         <div className="btn-submit-resend">
                                             <Button style={{fontFamily: fontForLang()}} className="btn-send" variant="contained" onClick={() => this.onPressReSend()}>{strings.sendYourInquiry}
-                                                <i className="fa fa-angle-right	"></i>
+                                                <i className={iconHandler()}></i>
                                             </Button>
                                         </div>
                                     </div>
@@ -119,7 +120,7 @@ class Form extends Component {
 
                                         <div className="btn-submit">
                                             <Button style={{fontFamily: fontForLang()}} disabled={this.state.disabled} className="btn-send" variant="contained" onClick={() => this.onPressSend()}>{strings.sendYourInquiry}
-                                                <i className="fa fa-angle-right	"></i>
+                                                <i className={iconHandler()}></i>
                                             </Button>
                                         </div>
                                     </div>

@@ -47,8 +47,8 @@ export const FooterStyle = styled.div`
     .logo{
         min-height: 72px;
         img{
-            height: 100%
-            object-fit: contain
+            height: 100%;
+            object-fit: contain;
         }
     }
     .desc-footer{
@@ -75,7 +75,12 @@ export const FooterStyle = styled.div`
     }
 .icons{
     display: flex;
+    justify-content:center;
     .icon{
+        @media(max-width: 600px){
+            margin: 4px;
+
+        }
         width: 40px;
   height: 40px;
   background-color: #ec1c24;
@@ -86,7 +91,7 @@ export const FooterStyle = styled.div`
     i{
         color: #fff;
     font-size: 22px;
-    vertical-align: -webkit-baseline-middle;
+        margin-top: 8px;
     }
     }
 

@@ -40,15 +40,20 @@ margin: 150px 0px;
 
 ul{
   list-style: none;
+  padding: 0;
+  margin: 0;
+}
+li {
+  padding-left: 1em; 
+  text-indent: -2.1em;
+  margin-bottom: 20px;
+
 }
 ul li::before {
   content: "⬤";
   color: #ec1c24;
-  font-weight: bold;
-  display: inline-block; 
-  width: 1em;
-  margin: 0px 10px;
-  
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 
