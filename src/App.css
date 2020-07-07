@@ -53,3 +53,6 @@
   src: url(assets/fonts/Roboto-Medium.ttf) format("opentype")
   
 }
+.year-input{
+  width: 100%;
+}
