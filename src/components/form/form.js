@@ -51,13 +51,11 @@ class Form extends Component {
                         fontFamily: fontForLang(),
                         borderColor: this.state.error[state] ? '#ec1c24' : '',
                         backgroundColor: this.state.error[state] ? 'rgba(236, 28, 36, 0.04)' : '',
-                        boxShadow: state == 'fullName' ? '0 0 20px 0 rgba(0, 0, 0, 0.1)' : '',
-                        borderColor: state == 'fullName' && 'transparent' 
-                        
+                        borderRadius: this.state.error[state] ? '5px 5px 0px 0px' : ''
                     }}
                     onChange={(e) => this.onChangeValueInput(e.target.value, state, placeholder, localStorage.getItem("lang"))}
                     onBlur={(e) => this.onChangeValueInput(e.target.value, state, placeholder, localStorage.getItem("lang"))}
-                    className="input" placeholder={placeholder} />
+                    className={`input ${state == 'fullName' ? 'foucs': ''}`} placeholder={placeholder} />
                 {
                     this.state.error[state] ? <div className="error-validation" style={{fontFamily: fontForLang()}} > {this.state.error[state]}</div> : ""
                 }
@@ -77,7 +75,6 @@ class Form extends Component {
                         container
                         direction="row"
                         justify="center"
-                        alignItems="center"
                         style={{ padding: '0px 20px' }}
                     >
                         <div className="image-video">
@@ -99,6 +96,7 @@ class Form extends Component {
                         item xs={12} lg={6}
                         container
                         direction="row"
+                        
                         style={{ padding: '0px 20px' }}
                     >
                         <div className="inputs">

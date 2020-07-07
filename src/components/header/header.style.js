@@ -4,7 +4,7 @@ export const HeaderStyle = styled.div`
 display: flex;
 justify-content: space-between;
 img{
-    width: 300px;
+    width: 250px;
     height: 75px;
     object-fit: contain;
     @media (max-width: 600px) {

@@ -87,7 +87,7 @@ export const InstructionStyle = styled.div`
 
     .how-header{
         font-size: 35px;
-        margin-top: 150px;
+        margin-top: 100px;
         color: #fff;
         font-family: Roboto; 
         letter-spacing: -0.97px;
@@ -125,14 +125,14 @@ export const InstructionStyle = styled.div`
       }
 
 .Bg-Circle{
-  padding:25px;
+  padding:22px;
   border-radius: 50%;
   box-shadow: 20px 20px 60px 0 rgba(0, 0, 0, 0.4);
   background-image: linear-gradient(225deg, #ec1c24, #f91c3d);
   position: relative;
   p{
     font-family: Roboto-Meduim;
-    font-size: 24px;
+    font-size: 20px;
     text-align: center;
     color: #fff;
     position: absolute;

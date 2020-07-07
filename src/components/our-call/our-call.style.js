@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const OurCallStyle = styled.div`
-margin: 150px 0px;
+margin: 100px 0px;
 @media (max-width: 900px) {
   margin: 100px 0px;
 
@@ -51,6 +51,7 @@ li {
   text-indent: -2.1em;
   margin-bottom: 20px;
   color: #595f6f;
+  font-size: 18px;
 
 }
 ul li::before {
@@ -58,6 +59,7 @@ ul li::before {
   color: #ec1c24;
   margin-left: 10px;
   margin-right: 10px;
+  font-size: 12px;
 }
 
 

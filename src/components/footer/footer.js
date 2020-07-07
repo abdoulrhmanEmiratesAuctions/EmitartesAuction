@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { FooterStyle } from "./footer.style";
 import { Grid, Container } from '@material-ui/core';
 import { strings } from '../../localization/localization';
-import { fontForLang } from '../../helper/font-famliy';
+import { fontForLang, fontForLangRobotoMedium } from '../../helper/font-famliy';
 export default class Footer extends Component {
     render() {
         return (
@@ -81,7 +81,7 @@ export default class Footer extends Component {
                                 justify="center"
                                 alignItems="center">
                                 <div>
-                                    <p style={{ fontFamily: fontForLang() }} className="p-follow">{strings.followTheFirstAndTheLargest}</p>
+                                    <p style={{ fontFamily: fontForLangRobotoMedium() }} className="p-follow">{strings.followTheFirstAndTheLargest}</p>
                                     <div className="icons">
                                         <a href="https://www.facebook.com/emiratesauction" rel="noopener noreferrer" target="_blank" className="icon">
                                             <img alt="image_4" src={require('../../assets/images/4E2ECCEE-1753-4CEB-A6A6-C78A9172992E.svg')} />

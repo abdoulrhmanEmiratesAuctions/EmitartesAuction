@@ -43,19 +43,24 @@ export const FooterStyle = styled.div`
 
 }
 .footer{
-    margin: 150px 0px;
+    margin: 100px 0px;
     @media(max-width: 900px) {
         margin: 100px 0px;
 
     }
     .logo{
         min-height: 72px;
-        text-align: center;
+        @media (max-width: 900px) {
+            text-align: center;
+
+        }
         img{
             height: 100%;
+            width: 290px;
             object-fit: contain;
             @media(max-width:900px) {
                 margin-bottom: 30px;
+                
             }
         }
     }
@@ -72,18 +77,23 @@ export const FooterStyle = styled.div`
 }
     .p-follow{
         font-family: Roboto;
-  font-size: 16px;
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: -0.44px;
-  color: #000000;
+        font-size: 16px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: -0.44px;
+        text-align: center;
+        color: #000000;
 
     }
 .icons{
     display: flex;
-    justify-content:center;
+    justify-content:flex-start;
+    @media (max-width: 900px) {
+        justify-content:center;
+
+    }
     .icon{
         @media(max-width: 600px){
             margin: 4px;

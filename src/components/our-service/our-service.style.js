@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export const OurServiceStyle = styled.div`
-margin-top: 150px;
+margin-top: 100px;
 background-color: #f6fbff;
-padding: 150px 0px;
+padding: 100px 0px;
 @media(max-width: 900px){
     margin-top: 100px;
 padding: 100px 0px;

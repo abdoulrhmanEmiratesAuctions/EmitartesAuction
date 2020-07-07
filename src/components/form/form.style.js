@@ -6,7 +6,7 @@ right-margin : {
     margin-right: 7px;
 }
 .header{
-    margin-top: 150px;
+    margin-top: 100px;
     @media(max-width: 900px) {
         margin-top: 100px;
       }
@@ -142,7 +142,7 @@ right-margin : {
 
  .header-input{
     font-family: Roboto;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -184,7 +184,7 @@ right-margin : {
   margin-top: 15px;
   padding: 0px 30px;
   font-size: 16px;
-  border-radius: 5px 5px 0px 0px;
+  border-radius: 5px 5px;
 }
 .btn-submit{
     margin-top: 50px;
@@ -312,4 +312,11 @@ right-margin : {
     color: #ffffff;
     padding: 10px 31px;
 }
+
+.foucs:focus {
+    box-shadow:  0 0 20px 0 rgba(0, 0, 0, 0.1) ;
+    border-color: transparent ;
+    border: 0px;
+    outline: none;
+  }
 `
