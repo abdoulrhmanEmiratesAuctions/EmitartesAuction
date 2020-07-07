@@ -1,8 +1,17 @@
 export const fontForLang = () => {
-    if (localStorage.getItem("lang") === 'en') {
-        return 'Roboto'
-    } else {
+    if (localStorage.getItem("lang") === 'ar') {
         return 'Almarai'
+    } else {
+        return 'Roboto'
     }
 }
+
+export const fontForLangRobotoMedium = () => {
+    if (localStorage.getItem("lang") === 'ar') {
+        return 'Almarai'
+    } else {
+        return 'Roboto-Meduim'
+    }
+}
+
 

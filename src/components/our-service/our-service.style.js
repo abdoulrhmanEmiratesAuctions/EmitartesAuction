@@ -20,15 +20,17 @@ padding: 150px 0px;
         @media(max-width: 600px){
             margin: 5px;
         }
-  font-family: Roboto;
-  font-size: 18px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.56;
-  letter-spacing: -0.45px;
-  text-align: center;
-  color: #595f6f;
+        font-family: Roboto;
+        font-size: 18px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.56;
+        letter-spacing: -0.45px;
+        text-align: center;
+        color: #595f6f;
+        margin: 5px 0px
+
     }
 }
 .container{

@@ -3,15 +3,17 @@ import { OurServiceStyle } from './our-service.style'
 import { Grid } from '@material-ui/core'
 import { CardStyle } from '../../styles/card.style'
 import { strings } from '../../localization/localization'
-import { fontForLang } from '../../helper/font-famliy'
+import { fontForLang, fontForLangRobotoMedium } from '../../helper/font-famliy'
 
 export default class OurService extends Component {
     render() {
         return (
             <OurServiceStyle>
                 <div className="header-service">
-                    <h1 style={{fontFamily: fontForLang()}}>{strings.whyOurService}</h1>
+                    <h1 style={{fontFamily: fontForLangRobotoMedium()}}>{strings.whyOurService}</h1>
                     <p style={{fontFamily: fontForLang()}}>{strings.weOperates24Hours} </p>
+                    <p style={{fontFamily: fontForLang(), }}>{strings.weOperates24HoursBr} </p>
+
                 </div>
 
                 <Grid container className="container" >

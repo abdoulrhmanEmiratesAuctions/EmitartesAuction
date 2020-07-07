@@ -3,7 +3,7 @@ import { InstructionStyle } from './instructions.style'
 import { Button, Grid } from "@material-ui/core";
 import { ContainerStyle } from '../../styles/container.style'
 import { strings } from '../../localization/localization';
-import { fontForLang } from '../../helper/font-famliy';
+import { fontForLang, fontForLangRobotoMedium } from '../../helper/font-famliy';
 
 
 export default class Instructions extends Component {
@@ -23,8 +23,6 @@ export default class Instructions extends Component {
                         <div className="div-btn">
                             <Button onClick={this.onPressStartToday} style={{fontFamily: fontForLang()}} className="btn-start" variant="contained">{strings.startToday}
                             <i className="fa fa-angle-down" aria-hidden="true"></i>
-
-                            
                             </Button>
                         </div>
                     </div>
@@ -49,14 +47,14 @@ export default class Instructions extends Component {
                                     <div className="header-sell">
                                         <div className="Bg-Circle"><p>1</p></div>
                                         <div className="content-sell">
-                                            <p style={{fontFamily: fontForLang()}}>{strings.submitYourCar}</p>
+                                            <p style={{fontFamily: fontForLangRobotoMedium()}}>{strings.submitYourCar}</p>
                                             <p style={{fontFamily: fontForLang()}} className="content-smaller">{strings.enterYourCarDetails}</p>
                                         </div>
                                     </div>
                                     <div className="header-sell">
                                         <div className="Bg-Circle"><p>2</p></div>
                                         <div className="content-sell">
-                                            <p style={{fontFamily: fontForLang()}}>{strings.receiveOffer}</p>
+                                            <p style={{fontFamily: fontForLangRobotoMedium()}}>{strings.receiveOffer}</p>
                                             <p style={{fontFamily: fontForLang()}} className="content-smaller">{strings.weWillCheckCar}</p>
                                         </div>
                                     </div>
@@ -64,7 +62,7 @@ export default class Instructions extends Component {
                                     <div className="header-sell">
                                         <div className="Bg-Circle"><p>3</p></div>
                                         <div className="content-sell">
-                                            <p style={{fontFamily: fontForLang()}}>{strings.getThePayment}</p>
+                                            <p style={{fontFamily: fontForLangRobotoMedium()}}>{strings.getThePayment}</p>
                                             <p style={{fontFamily: fontForLang()}} className="content-smaller">{strings.afterPriceIsAgree}</p>
                                         </div>
                                     </div>

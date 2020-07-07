@@ -86,7 +86,7 @@ export const FooterStyle = styled.div`
   background-color: #ec1c24;
   border-radius: 50%;
     text-align: center;
-    margin: 15px;
+    margin: 15px 10px;
 
     i{
         color: #fff;

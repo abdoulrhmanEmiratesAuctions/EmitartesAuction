@@ -66,6 +66,7 @@ export const InstructionStyle = styled.div`
         line-height: 1;
         letter-spacing: normal;
         color: #ffffff;
+        text-transform: none;
 
     }
     }
@@ -128,7 +129,7 @@ export const InstructionStyle = styled.div`
   background-image: linear-gradient(225deg, #ec1c24, #f91c3d);
   position: relative;
   p{
-    font-family: Roboto;
+    font-family: Roboto-Meduim;
     font-size: 24px;
     text-align: center;
     color: #fff;
@@ -189,6 +190,7 @@ export const InstructionStyle = styled.div`
         letter-spacing: -0.63px;
         text-align: center;
         color: #ffffff;
+        margin-bottom: 10px;
     }
     .desc-sold{
         font-family: Roboto;

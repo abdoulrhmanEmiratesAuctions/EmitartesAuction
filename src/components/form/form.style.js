@@ -47,7 +47,7 @@ right-margin : {
     background-size: cover;
     position: relative;
     border-radius: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     
 
     .Bg-Circle {
@@ -189,6 +189,7 @@ right-margin : {
     .btn-send{
         box-shadow: 20px 20px 60px 0 rgba(0, 0, 0, 0.4);
         text-transform: none;
+        padding: 0px 30px;
     width: 250px;
         height: 50px;
         border-radius: 5px;

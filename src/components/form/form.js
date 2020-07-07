@@ -50,7 +50,10 @@ class Form extends Component {
                     style={{
                         fontFamily: fontForLang(),
                         borderColor: this.state.error[state] ? '#ec1c24' : '',
-                        backgroundColor: this.state.error[state] ? 'rgba(236, 28, 36, 0.04)' : ''
+                        backgroundColor: this.state.error[state] ? 'rgba(236, 28, 36, 0.04)' : '',
+                        boxShadow: state == 'fullName' ? '0 0 20px 0 rgba(0, 0, 0, 0.1)' : '',
+                        borderColor: state == 'fullName' && 'transparent' 
+                        
                     }}
                     onChange={(e) => this.onChangeValueInput(e.target.value, state, placeholder, localStorage.getItem("lang"))}
                     onBlur={(e) => this.onChangeValueInput(e.target.value, state, placeholder, localStorage.getItem("lang"))}
