@@ -30,7 +30,7 @@ class Form extends Component {
     }
     componentDidMount() {
         observableLang.subscribe((Res) => {
-            this.setState({responseError: false , error: { brand: "", modal: "", fullName: "", mobile: ""}});
+            this.setState({responseError: false , error: { brand: "", modal: "", fullName: "", mobile: ""}, });
         });
 
     }
@@ -38,7 +38,7 @@ class Form extends Component {
         if (value) {
             this.setState({ [state]: value, error: { ...this.state.error, [state]: "" } });
         } else {
-            this.setState({ error: { ...this.state.error, [state]: lang === 'en' ? `Please Type ${placeholder}` : `برجاء ادخال ${placeholder}` } })
+            this.setState({ [state]: value, error: { ...this.state.error, [state]: lang === 'ar' ?  `برجاء ادخال ${placeholder}` : `Please Type ${placeholder}` } })
         }
     }
 
