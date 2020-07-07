@@ -30,11 +30,11 @@ class Form extends Component {
     }
     componentDidMount() {
         observableLang.subscribe((Res) => {
-            this.setState({responseError: false});
-            this.state.error = {  brand: "",
+            this.setState({responseError: false , error: { brand: "",
             modal: "",
             fullName: "",
-            mobile: ""}
+            mobile: ""}});
+      
         });
 
     }

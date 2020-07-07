@@ -210,6 +210,7 @@ export const InstructionStyle = styled.div`
 .fa-angle-down{
     color: #FFFFFF;
     margin-left: 8px;
+    margin-right: 8px;
     
 }
 `
