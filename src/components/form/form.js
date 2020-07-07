@@ -30,11 +30,7 @@ class Form extends Component {
     }
     componentDidMount() {
         observableLang.subscribe((Res) => {
-            this.setState({responseError: false , error: { brand: "",
-            modal: "",
-            fullName: "",
-            mobile: ""}});
-      
+            this.setState({responseError: false , error: { brand: "", modal: "", fullName: "", mobile: ""}});
         });
 
     }
@@ -80,13 +76,10 @@ class Form extends Component {
                         justify="center"
                         alignItems="center"
                         style={{ padding: '20px' }}
-
-
                     >
                         <div className="image-video">
                             <div className="Bg-Circle">
                                 <img alt="image_2" className="icon-play" src={require('../../assets/images/18225C47-54D9-4099-94F6-94E2EC837565.svg')} />
-
                             </div>
                         </div>
                         <div className="video-desc">
