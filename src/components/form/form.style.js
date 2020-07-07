@@ -50,9 +50,9 @@ right-margin : {
     background-size: cover;
     position: relative;
     border-radius: 10px;
-    margin-bottom: 40px;
-    
-
+    @media(max-width: 900px){
+        margin-bottom: 40px;
+    }
     .Bg-Circle {
         width: 50px;
         height: 50px;
@@ -319,4 +319,5 @@ right-margin : {
     border: 0px;
     outline: none;
   }
+    
 `

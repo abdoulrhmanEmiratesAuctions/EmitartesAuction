@@ -35,7 +35,7 @@ class Form extends Component {
 
     }
     onChangeValueInput = (value, state, placeholder, lang) => {
-        if (value) {
+        if (value && value !== 'Brand' ) {
             this.setState({ [state]: value, error: { ...this.state.error, [state]: "" } });
         } else {
             this.setState({ [state]: value, error: { ...this.state.error, [state]: lang === 'ar' ?  `برجاء ادخال ${placeholder}` : `Please Type ${placeholder}` } })
@@ -51,11 +51,35 @@ class Form extends Component {
                         fontFamily: fontForLang(),
                         borderColor: this.state.error[state] ? '#ec1c24' : '',
                         backgroundColor: this.state.error[state] ? 'rgba(236, 28, 36, 0.04)' : '',
-                        borderRadius: this.state.error[state] ? '5px 5px 0px 0px' : ''
+                        borderRadius: this.state.error[state] ? '5px 5px 0px 0px' : '',
                     }}
                     onChange={(e) => this.onChangeValueInput(e.target.value, state, placeholder, localStorage.getItem("lang"))}
                     onBlur={(e) => this.onChangeValueInput(e.target.value, state, placeholder, localStorage.getItem("lang"))}
-                    className={`input ${state == 'fullName' ? 'foucs': ''}`} placeholder={placeholder} />
+                    className={`input ${state == 'fullName' ? 'foucs': ''}`} placeholder={state == 'modal' ? 'YYYY' : placeholder} />
+                {
+                    this.state.error[state] ? <div className="error-validation" style={{fontFamily: fontForLang()}} > {this.state.error[state]}</div> : ""
+                }
+            </div>
+        )
+    }
+    renderSelect = (state) => {
+        return (
+            <div className="form-group">
+                <div className="label"><label className="" style={{ fontFamily: fontForLang() }}>{'Brand'}</label></div>
+                <select className="input" placeholder={'Brand'} 
+                  onChange={(e) => this.onChangeValueInput(e.target.value, state, 'Brand', localStorage.getItem("lang"))}
+                  onBlur={(e) => this.onChangeValueInput(e.target.value, state, 'Brand', localStorage.getItem("lang"))}
+                  style={{
+                    fontFamily: fontForLang(),
+                    borderColor: this.state.error[state] ? '#ec1c24' : '',
+                    backgroundColor: this.state.error[state] ? 'rgba(236, 28, 36, 0.04)' : '',
+                    borderRadius: this.state.error[state] ? '5px 5px 0px 0px' : '',
+                    width: '87.7%'
+
+                }}>
+                    <option selected hidden disabled>Brand</option>
+                    <option>Test Option</option>
+                </select>
                 {
                     this.state.error[state] ? <div className="error-validation" style={{fontFamily: fontForLang()}} > {this.state.error[state]}</div> : ""
                 }
@@ -75,6 +99,7 @@ class Form extends Component {
                         container
                         direction="row"
                         justify="center"
+                        alignItems="flex-start"
                         style={{ padding: '0px 20px' }}
                     >
                         <div className="image-video">
@@ -85,9 +110,7 @@ class Form extends Component {
                         <div className="video-desc">
                             <h1 style={{ fontFamily: fontForLang() }}>{strings.whyYouShouldSellYourCar}</h1>
                             <h6 style={{ fontFamily: fontForLang() }}>{strings.weSupportYouFromStartToFinish} </h6>
-                            <h5 style={{ fontFamily: fontForLang() }}>
-                                {strings.weHaveStreamlind}
-                            </h5>
+                            <h5 style={{ fontFamily: fontForLang() }}>{strings.weHaveStreamlind}</h5>
                             <p style={{ fontFamily: fontForLang() }}>{strings.readyToSell}</p>
                         </div>
                     </Grid>
@@ -121,9 +144,9 @@ class Form extends Component {
                                     </div>
                                     :
                                     <div>
-                                        {this.state.responseError ? <div style={{ fontFamily: fontForLang() }} className="error-toast">{strings.errorMsgResponse}</div> : ""}
+                                        {/* {this.state.responseError ? <div style={{ fontFamily: fontForLang() }} className="error-toast">{strings.errorMsgResponse}</div> : ""} */}
                                         <div style={{ fontFamily: fontForLang() }} className="header-input">  {strings.enterCarDetail}</div>
-                                        {this.renderInputs("text", "brand", strings.carBrand)}
+                                        {this.renderSelect("brand")}
                                         {this.renderInputs("number", "modal", strings.carModel)}
                                         <div className="label"></div>
                                         <div className="header-input" style={{ fontFamily: fontForLang() }} >  {strings.enterYourContactInfo}</div>
@@ -156,7 +179,7 @@ class Form extends Component {
     onPressSend = () => {
         const error = validationSellFom(this.state, localStorage.getItem("lang"));
         this.setState({ error: error, disabled: true })
-        if (this.state.brand && this.state.modal && this.state.fullName && this.state.mobile) {
+        if (Object.keys(error).length === 0 && error.constructor === Object) {
             const sellData = stateFields(this.state);
             this.props.sellCarAction(sellData);
         } else {
