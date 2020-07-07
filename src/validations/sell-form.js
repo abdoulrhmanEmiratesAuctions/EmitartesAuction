@@ -16,8 +16,6 @@ export const validationSellFom = (state, lang) => {
     return error;
 }
 
-
-
 export const stateFields = (state) => {
     const data = {
         "FullName": state.fullName,

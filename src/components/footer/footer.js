@@ -85,7 +85,7 @@ export default class Footer extends Component {
                                     <div className="icons">
                                         <a href="https://www.facebook.com/emiratesauction"  rel="noopener noreferrer"   target="_blank" className="icon">  <i className="fab fa-facebook"></i></a>
                                         <a href="https://twitter.com/emiratesauction"  rel="noopener noreferrer"   target="_blank" className="icon"> <i className="fab fa-twitter"></i></a>
-                                        <a href="https://twitter.com/emiratesauction"  rel="noopener noreferrer"   target="_blank" className="icon"><i className="fab fa-youtube"></i></a>
+                                        <a href="https://www.youtube.com/user/emiratesauction"  rel="noopener noreferrer"   target="_blank" className="icon"><i className="fab fa-youtube"></i></a>
                                         <a href="https://www.instagram.com/emiratesauction/"  rel="noopener noreferrer"   target="_blank" className="icon"><i className="fab fa-instagram"></i></a>
                                        <a href="https://plus.google.com/+EmiratesauctionUAE"  rel="noopener noreferrer"   target="_blank" className="icon"> <i className="fab fa-google"></i></a>
 
