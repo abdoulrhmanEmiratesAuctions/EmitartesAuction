@@ -172,12 +172,12 @@ right-margin : {
 .input{
     width: 80%;
     height: 50px;
-  border-radius: 5px;
   border: solid 1px #bfc4ce;
   background-color: #ffffff;
   margin-top: 15px;
   padding: 0px 30px;
   font-size: 16px;
+  border-radius: 5px 5px 0px 0px;
 }
 .btn-submit{
     margin-top: 50px;
@@ -285,5 +285,23 @@ right-margin : {
     }
 
    
+}
+.error-validation{
+    background-color: #ec1c24;
+    width: 80%;
+    border-radius: 0px 0px 5px 5px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0px 30px;
+    color: #fff;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+    padding: 10px 31px;
 }
 `

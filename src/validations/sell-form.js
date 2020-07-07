@@ -1,17 +1,17 @@
-export const validationSellFom = (state) => {
+export const validationSellFom = (state, lang) => {
+    
     let error = {}
     if (!state.brand) {
-        error.brand = "asd"
+       error.brand = lang === 'en' ? `Please Type A Car Brand` : `برجاء ادخال العلامة التجارية`
     }
     if (!state.modal) {
-        error.modal = "asd"
+        error.modal  = lang === 'en' ? `Please Type A Car Brand` : `برجاء ادخال الاصدار `
     }
     if (!state.fullName) {
-        error.fullName = "asd"
+        error.fullName  = lang === 'en' ? `Please Type Your Full Name` : `برجاء ادخال الاسم بالكامل `
     }
     if (!state.mobile) {
-        error.mobile = "asd"
-
+        error.mobile  = lang === 'en' ? `Please Type Your Mobile Number` : `برجاء ادخال  رقم الهاتف `
     }
     return error;
 }

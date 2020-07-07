@@ -7,43 +7,61 @@ import { sellCarAction } from '../../redux/actions/sell.action';
 import { connect } from 'react-redux';
 import { observableLang } from '../../services/lang';
 import { fontForLang } from '../../helper/font-famliy';
-import {iconHandler} from '../../helper/angle-icon-handler';
+import { iconHandler } from '../../helper/angle-icon-handler';
 
 class Form extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            error: {},
+            error: {
+                brand: "",
+                modal: "",
+                fullName: "",
+                mobile: ""
+            },
             responseError: false,
             responseSuccess: false,
-            disabled: false
+            disabled: false,
+            brand: "",
+            modal: "",
+            fullName: "",
+            mobile: ""
         }
     }
     componentDidMount() {
-        observableLang.subscribe((Res) => this.setState({}));
+        observableLang.subscribe((Res) => {
+            this.setState({responseError: false});
+            this.state.error = {  brand: "",
+            modal: "",
+            fullName: "",
+            mobile: ""}
+        });
 
     }
-    onChangeValueInput = (value, state) => {
+    onChangeValueInput = (value, state, placeholder, lang) => {
         if (value) {
             this.setState({ [state]: value, error: { ...this.state.error, [state]: "" } });
         } else {
-            this.setState({ error: { ...this.state.error, [state]: 'sasda' } })
+            this.setState({ error: { ...this.state.error, [state]: lang === 'en' ? `Please Type ${placeholder}` : `برجاء ادخال ${placeholder}` } })
         }
     }
 
     renderInputs = (type, state, placeholder) => {
         return (
             <div className="form-group">
-                <div className="label"><label className="" style={{fontFamily: fontForLang()}}>{placeholder}</label></div>
-                <input  type={type}
+                <div className="label"><label className="" style={{ fontFamily: fontForLang() }}>{placeholder}</label></div>
+                <input type={type}
                     style={{
                         fontFamily: fontForLang(),
                         borderColor: this.state.error[state] ? '#ec1c24' : '',
                         backgroundColor: this.state.error[state] ? 'rgba(236, 28, 36, 0.04)' : ''
                     }}
-                    onChange={(e) => this.onChangeValueInput(e.target.value, state)}
-                    onBlur={(e) => this.onChangeValueInput(e.target.value, state)}
+                    onChange={(e) => this.onChangeValueInput(e.target.value, state, placeholder, localStorage.getItem("lang"))}
+                    onBlur={(e) => this.onChangeValueInput(e.target.value, state, placeholder, localStorage.getItem("lang"))}
                     className="input" placeholder={placeholder} />
+                {
+                    this.state.error[state] ? <div className="error-validation" style={{fontFamily: fontForLang()}} > {this.state.error[state]}</div> : ""
+                }
             </div>
         )
     }
@@ -51,8 +69,8 @@ class Form extends Component {
         return (
             <FormStyle id="form">
                 <div className="header">
-                    <h2 style={{fontFamily: fontForLang()}}>{strings.startToday}</h2>
-                    <p style={{fontFamily: fontForLang()}}>{strings.youAreJustOneClick}</p>
+                    <h2 style={{ fontFamily: fontForLang() }}>{strings.startToday}</h2>
+                    <p style={{ fontFamily: fontForLang() }}>{strings.youAreJustOneClick}</p>
                 </div>
                 <Grid container spacing={0} className="container" >
                     <Grid
@@ -72,12 +90,12 @@ class Form extends Component {
                             </div>
                         </div>
                         <div className="video-desc">
-                            <h1 style={{fontFamily: fontForLang()}}>{strings.whyYouShouldSellYourCar}</h1>
-                            <h6 style={{fontFamily: fontForLang()}}>{strings.weSupportYouFromStartToFinish} </h6>
-                            <h5 style={{fontFamily: fontForLang()}}>
+                            <h1 style={{ fontFamily: fontForLang() }}>{strings.whyYouShouldSellYourCar}</h1>
+                            <h6 style={{ fontFamily: fontForLang() }}>{strings.weSupportYouFromStartToFinish} </h6>
+                            <h5 style={{ fontFamily: fontForLang() }}>
                                 {strings.weHaveStreamlind}
                             </h5>
-                            <p style={{fontFamily: fontForLang()}}>{strings.readyToSell}</p>
+                            <p style={{ fontFamily: fontForLang() }}>{strings.readyToSell}</p>
                         </div>
                     </Grid>
 
@@ -97,29 +115,29 @@ class Form extends Component {
                                         </div>
 
                                         <div className="card-content">
-                                            <p style={{fontFamily: fontForLang()}} className="done-desc">{strings.successHeader}</p>
-                                            <p style={{fontFamily: fontForLang()}} className="done-content">{strings.successContent}</p>
+                                            <p style={{ fontFamily: fontForLang() }} className="done-desc">{strings.successHeader}</p>
+                                            <p style={{ fontFamily: fontForLang() }} className="done-content">{strings.successContent}</p>
                                         </div>
 
                                         <div className="btn-submit-resend">
-                                            <Button style={{fontFamily: fontForLang()}} className="btn-send" variant="contained" onClick={() => this.onPressReSend()}>{strings.sendYourInquiry}
+                                            <Button style={{ fontFamily: fontForLang() }} className="btn-send" variant="contained" onClick={() => this.onPressReSend()}>{strings.sendYourInquiry}
                                                 <i className={iconHandler()}></i>
                                             </Button>
                                         </div>
                                     </div>
                                     :
                                     <div>
-                                        {this.state.responseError ? <div style={{fontFamily: fontForLang()}}  className="error-toast">{strings.errorMsgResponse}</div> : ""}
-                                        <div style={{fontFamily: fontForLang()}} className="header-input">  {strings.enterCarDetail}</div>
+                                        {this.state.responseError ? <div style={{ fontFamily: fontForLang() }} className="error-toast">{strings.errorMsgResponse}</div> : ""}
+                                        <div style={{ fontFamily: fontForLang() }} className="header-input">  {strings.enterCarDetail}</div>
                                         {this.renderInputs("text", "brand", strings.carBrand)}
                                         {this.renderInputs("number", "modal", strings.carModel)}
                                         <div className="label"></div>
-                                        <div className="header-input" style={{fontFamily: fontForLang()}} >  {strings.enterYourContactInfo}</div>
+                                        <div className="header-input" style={{ fontFamily: fontForLang() }} >  {strings.enterYourContactInfo}</div>
                                         {this.renderInputs("text", "fullName", strings.yourFullName)}
                                         {this.renderInputs("number", "mobile", strings.yourMobileNumber)}
 
                                         <div className="btn-submit">
-                                            <Button style={{fontFamily: fontForLang()}} disabled={this.state.disabled} className="btn-send" variant="contained" onClick={() => this.onPressSend()}>{strings.sendYourInquiry}
+                                            <Button style={{ fontFamily: fontForLang() }} disabled={this.state.disabled} className="btn-send" variant="contained" onClick={() => this.onPressSend()}>{strings.sendYourInquiry}
                                                 <i className={iconHandler()}></i>
                                             </Button>
                                         </div>
@@ -134,16 +152,15 @@ class Form extends Component {
     }
     componentWillReceiveProps(nextProps) {
         if (!this.props.car.response && nextProps.car.response) {
-            if (nextProps.car.response.message ==="Network Error") {
-                this.setState({responseError: true});
+            if (nextProps.car.response.message === "Network Error") {
+                this.setState({ responseError: true, disabled: false, });
             } else {
-                this.setState({ responseSuccess: true, disabled: false });
-
+                this.setState({ responseSuccess: true, disabled: false, responseError: false });
             }
         }
     }
     onPressSend = () => {
-        const error = validationSellFom(this.state);
+        const error = validationSellFom(this.state, localStorage.getItem("lang"));
         this.setState({ error: error, disabled: true })
         if (this.state.brand && this.state.modal && this.state.fullName && this.state.mobile) {
             const sellData = stateFields(this.state);
