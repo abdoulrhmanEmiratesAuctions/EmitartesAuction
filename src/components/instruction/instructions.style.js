@@ -92,6 +92,9 @@ export const InstructionStyle = styled.div`
         font-family: Roboto; 
         letter-spacing: -0.97px;
         margin-bottom: 10px;
+        @media(max-width: 900px) {
+            margin-top: 100px;
+        }
     }
     .Sell-Your-Car-in-Thr{
         font-family: Roboto;
@@ -117,7 +120,6 @@ export const InstructionStyle = styled.div`
     background-size: cover;
     position: relative;
     @media (max-width: 900px) {
-    padding: 50px 10px;
     height: 365px;
 }
       }

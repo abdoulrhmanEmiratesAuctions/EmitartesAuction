@@ -10,6 +10,8 @@ export const CardStyle = styled.div`
   margin-top: 50px;
   @media(max-width: 900px){
     padding-bottom: 20px;
+    margin-top: 30px;
+
     text-align: center;
   }
 

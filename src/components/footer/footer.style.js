@@ -44,11 +44,19 @@ export const FooterStyle = styled.div`
 }
 .footer{
     margin: 150px 0px;
+    @media(max-width: 900px) {
+        margin: 100px 0px;
+
+    }
     .logo{
         min-height: 72px;
+        text-align: center;
         img{
             height: 100%;
             object-fit: contain;
+            @media(max-width:900px) {
+                margin-bottom: 30px;
+            }
         }
     }
     .desc-footer{
@@ -86,7 +94,7 @@ export const FooterStyle = styled.div`
   background-color: #ec1c24;
   border-radius: 50%;
     text-align: center;
-    margin: 15px 10px;
+    margin: 15px 5px;
 
     i{
         color: #fff;

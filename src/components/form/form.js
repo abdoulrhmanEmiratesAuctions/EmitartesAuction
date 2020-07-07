@@ -78,7 +78,7 @@ class Form extends Component {
                         direction="row"
                         justify="center"
                         alignItems="center"
-                        style={{ padding: '20px' }}
+                        style={{ padding: '0px 20px' }}
                     >
                         <div className="image-video">
                             <div className="Bg-Circle">
@@ -99,7 +99,7 @@ class Form extends Component {
                         item xs={12} lg={6}
                         container
                         direction="row"
-                        style={{ padding: '20px' }}
+                        style={{ padding: '0px 20px' }}
                     >
                         <div className="inputs">
 

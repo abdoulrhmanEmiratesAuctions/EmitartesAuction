@@ -1,4 +1,4 @@
 export const base = {
-    url: "https://support.eas.ae/",
-    sellCar: "CustomerCarSell/NewCustomerCarSellRequest"
+    url: "https://support.eas.ae/api/",
+    sellCar: "CustomerCarSellApi/NewCustomerCarSellRequest"
 }

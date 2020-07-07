@@ -7,6 +7,9 @@ right-margin : {
 }
 .header{
     margin-top: 150px;
+    @media(max-width: 900px) {
+        margin-top: 100px;
+      }
     h2{
         margin: 10px 0px;
         font-family: Roboto;
@@ -147,6 +150,10 @@ right-margin : {
   letter-spacing: -0.71px;
   color: #595f6f;
   font-weight: bold;
+  @media(max-width: 750px){
+      display: none;
+  }
+ 
 
  }
 }
@@ -154,7 +161,7 @@ right-margin : {
     padding: 0px 100px;
     width: 100%;
     @media (max-width: 900px) {
-    padding: 50px 10px;
+    padding: 0px 10px;
 }
 }
 .label{

@@ -2,7 +2,10 @@ import styled from 'styled-components';
 
 export const OurCallStyle = styled.div`
 margin: 150px 0px;
+@media (max-width: 900px) {
+  margin: 100px 0px;
 
+}
 .header-call{
  h1{
     font-family: Roboto;
@@ -47,6 +50,7 @@ li {
   padding-left: 1em; 
   text-indent: -2.1em;
   margin-bottom: 20px;
+  color: #595f6f;
 
 }
 ul li::before {

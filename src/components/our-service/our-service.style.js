@@ -4,6 +4,11 @@ export const OurServiceStyle = styled.div`
 margin-top: 150px;
 background-color: #f6fbff;
 padding: 150px 0px;
+@media(max-width: 900px){
+    margin-top: 100px;
+padding: 100px 0px;
+
+} 
 .header-service{
     h1{
         font-family: Roboto;
