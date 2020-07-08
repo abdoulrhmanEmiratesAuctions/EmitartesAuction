@@ -8,6 +8,8 @@ import { connect } from 'react-redux';
 import { observableLang } from '../../services/lang';
 import { fontForLang } from '../../helper/font-famliy';
 import { iconHandler } from '../../helper/angle-icon-handler';
+import { Player, BigPlayButton } from 'video-react';
+
 
 class Form extends Component {
     constructor(props) {
@@ -30,15 +32,15 @@ class Form extends Component {
     }
     componentDidMount() {
         observableLang.subscribe((Res) => {
-            this.setState({responseError: false , error: { brand: "", modal: "", fullName: "", mobile: ""}, });
+            this.setState({ responseError: false, error: { brand: "", modal: "", fullName: "", mobile: "" }, });
         });
 
     }
     onChangeValueInput = (value, state, placeholder, lang) => {
-        if (value && value !== 'DEFAULT' ) {
+        if (value && value !== 'DEFAULT') {
             this.setState({ [state]: value, error: { ...this.state.error, [state]: "" } });
         } else {
-            this.setState({ [state]: value, error: { ...this.state.error, [state]: lang === 'ar' ?  `برجاء ادخال ${placeholder}` : `Please Type ${placeholder}` } })
+            this.setState({ [state]: value, error: { ...this.state.error, [state]: lang === 'ar' ? `برجاء ادخال ${placeholder}` : `Please Type ${placeholder}` } })
         }
     }
 
@@ -55,9 +57,9 @@ class Form extends Component {
                     }}
                     onChange={(e) => this.onChangeValueInput(e.target.value, state, placeholder, localStorage.getItem("lang"))}
                     onBlur={(e) => this.onChangeValueInput(e.target.value, state, placeholder, localStorage.getItem("lang"))}
-                    className={`input ${state === 'fullName' ? 'foucs': ''}`} placeholder={state === 'modal' ? 'YYYY' : placeholder} />
+                    className={`input ${state === 'fullName' ? 'foucs' : ''}`} placeholder={state === 'modal' ? 'YYYY' : placeholder} />
                 {
-                    this.state.error[state] ? <div className="error-validation" style={{fontFamily: fontForLang()}} > <p>{this.state.error[state]}</p></div> : ""
+                    this.state.error[state] ? <div className="error-validation" style={{ fontFamily: fontForLang() }} > <p>{this.state.error[state]}</p></div> : ""
                 }
             </div>
         )
@@ -66,20 +68,20 @@ class Form extends Component {
         return (
             <div className="form-group">
                 <div className="label"><label className="" style={{ fontFamily: fontForLang() }}>{placeholder}</label></div>
-                <select defaultValue={'DEFAULT'} className="input" placeholder={placeholder} 
-                  onChange={(e) => this.onChangeValueInput(e.target.value, state, 'Brand', localStorage.getItem("lang"))}
-                  onBlur={(e) => this.onChangeValueInput(e.target.value, state, 'Brand', localStorage.getItem("lang"))}
-                  style={{
-                    fontFamily: fontForLang(),
-                    borderColor: this.state.error[state] ? '#ec1c24' : '',
-                    backgroundColor: this.state.error[state] ? 'rgba(236, 28, 36, 0.04)' : '',
-                    borderRadius: this.state.error[state] ? '5px 5px 0px 0px' : '',
-                }}>
+                <select defaultValue={'DEFAULT'} className="input" placeholder={placeholder}
+                    onChange={(e) => this.onChangeValueInput(e.target.value, state, 'Brand', localStorage.getItem("lang"))}
+                    onBlur={(e) => this.onChangeValueInput(e.target.value, state, 'Brand', localStorage.getItem("lang"))}
+                    style={{
+                        fontFamily: fontForLang(),
+                        borderColor: this.state.error[state] ? '#ec1c24' : '',
+                        backgroundColor: this.state.error[state] ? 'rgba(236, 28, 36, 0.04)' : '',
+                        borderRadius: this.state.error[state] ? '5px 5px 0px 0px' : '',
+                    }}>
                     <option value="DEFAULT" hidden disabled>{placeholder}</option>
                     <option>Test Option</option>
                 </select>
                 {
-                    this.state.error[state] ? <div className="error-validation" style={{fontFamily: fontForLang()}} ><p>{this.state.error[state]}</p>
+                    this.state.error[state] ? <div className="error-validation" style={{ fontFamily: fontForLang() }} ><p>{this.state.error[state]}</p>
                     </div> : ""
                 }
             </div>
@@ -101,11 +103,20 @@ class Form extends Component {
                         alignContent="flex-start"
                         style={{ padding: '0px 20px' }}
                     >
-                        <div className="image-video">
+                        <Player
+                            playsInline
+                            height={330}
+                            width={"100%"}
+                            fluid={false}
+                            poster={require(`../../assets/images/ferrada_red_matte_bmw_m4_5k-t2.jpg`)}
+                            src={require('../../assets/images/WhatsApp Video 2020-07-08 at 1.43.57 AM.mp4')}>
+                            <BigPlayButton position="center"  />
+                        </Player>
+                        {/* <div className="image-video">
                             <div className="Bg-Circle">
                                 <img alt="image_2" className="icon-play" src={require('../../assets/images/18225C47-54D9-4099-94F6-94E2EC837565.svg')} />
                             </div>
-                        </div>
+                        </div> */}
                         <div className="video-desc">
                             <h1 style={{ fontFamily: fontForLang() }}>{strings.whyYouShouldSellYourCar}</h1>
                             <h6 style={{ fontFamily: fontForLang() }}>{strings.weSupportYouFromStartToFinish} </h6>
@@ -118,7 +129,7 @@ class Form extends Component {
                         item xs={12} lg={6}
                         container
                         direction="row"
-                        
+
                         style={{ padding: '0px 20px' }}
                     >
                         <div className="inputs">

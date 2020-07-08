@@ -209,7 +209,7 @@ right-margin : {
         box-shadow: 20px 20px 60px 0 rgba(0, 0, 0, 0.4);
         text-transform: none;
         padding: 0px 30px;
-    width: auto;
+        width: auto;
         height: 50px;
         border-radius: 5px;
         background-color: #ec1c24;
@@ -348,5 +348,36 @@ right-margin : {
     border: 0px;
     outline: none;
   }
-    
+.video-react .video-react-big-play-button.video-react-big-play-button-center {
+    background-color: red;
+    background-image: url(${require(`../../assets/images/18225C47-54D9-4099-94F6-94E2EC837565.svg`)});
+    background-repeat: no-repeat;
+    background-position: 50% calc(50% - 10px);
+    border: none !important; 
+    box-shadow: none !important; 
+    border: none !important;
+    box-shadow: none !important;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-position: center;
+    &:before {
+      content: "";
+      display: none;
+    }
+    &:hover {
+      background-color: red;
+      opacity: .7;
+    }
+  }
+  .video-react .video-react-poster{
+    background-size: cover;
+    border-radius: 10px;
+  }
+  .video-react-video{
+  }
+  .video-react{
+    border-radius: 10px;
+
+  }
 `
