@@ -1,4 +1,5 @@
 export const base = {
     url: "https://support.eas.ae/api/",
-    sellCar: "CustomerCarSellApi/NewCustomerCarSellRequest"
+    sellCar: "CustomerCarSellApi/NewCustomerCarSellRequest",
+    getBrands : "CustomerCarSellApi/GetMakeModels"
 }

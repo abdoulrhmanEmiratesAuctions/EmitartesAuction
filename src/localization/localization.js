@@ -20,6 +20,7 @@ export let strings = new LocalizedStrings({
      enterCarDetail: "Enter your car Details",
      carBrand: "Car Brand",
      carModel: "Car Model",
+     year: "Car Year",
      enterYourContactInfo: "Enter your Contact Info",
      yourFullName: "Your Full Name",
      yourMobileNumber: "Your Mobile Number",
@@ -114,7 +115,8 @@ export let strings = new LocalizedStrings({
     followTheFirstAndTheLargest: "اتبع أول وأكبر مزاد على الإنترنت في الإمارات العربية المتحدة والشرق الأوسط",
     errorMsgResponse: "* يجب ملء جميع الحقول",
     successHeader: "تم إرسال استفسارك بنجاح",
-    successContent: "تم ارسال رسالتك بنجاح. شكرا لاستفسارك. تم تحويله إلى القسم المختص وسيتم التعامل معه خلال 24 ساعة"
+    successContent: "تم ارسال رسالتك بنجاح. شكرا لاستفسارك. تم تحويله إلى القسم المختص وسيتم التعامل معه خلال 24 ساعة",
+    year: "سنة الصنع",
 
  }
 });

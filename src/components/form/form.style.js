@@ -194,6 +194,7 @@ right-margin : {
   border-radius: 5px 5px;
   box-sizing: border-box;
   color: #595f6f;
+
   @media(max-width: 900px) {
     width: 100%;
 }
@@ -382,4 +383,18 @@ right-margin : {
     border-radius: 10px;
     direction: ltr;
   }
+  fieldset{
+      border: 0px;
+      
+  }
+.MuiInputBase-input{
+    color: #595f6f;
+    opacity: 1;
+    &::placeholder{
+        color: #595f6f;
+    opacity: 1;
+    }
+
+}
+
 `

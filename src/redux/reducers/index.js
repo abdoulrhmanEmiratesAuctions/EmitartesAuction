@@ -1,8 +1,11 @@
 import { combineReducers } from 'redux';
 import SellReducer from "./sell.reducer";
+import Brands from "./brand.reducer";
+
 
 const rootReducer = combineReducers({
-    sellCar: SellReducer
+    sellCar: SellReducer,
+    brands: Brands
 
 })
 
