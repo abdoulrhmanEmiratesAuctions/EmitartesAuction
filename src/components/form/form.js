@@ -85,7 +85,7 @@ class Form extends Component {
                     >
                         <Player
                             playsInline={false}
-                            height={330}
+                            height={420}
                             width={"100%"}
                             fluid={false}
                             poster={require(`../../assets/images/ferrada_red_matte_bmw_m4_5k-t2.jpg`)}
