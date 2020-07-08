@@ -11,11 +11,11 @@ export const validationSellFom = (state, lang) => {
     }
    
     if (!state.brand) {
-       error.brand = lang === 'ar' ?  `برجاء ادخال  ماركة السيارة` : `Please type a car brand`
+       error.brand = lang === 'ar' ?  `برجاء ادخال  ماركة السيارة` : `Please type a car make`
     }
  
     if (state.brand === 'DEFAULT') {
-        error.brand = lang === 'ar' ?  `برجاء ادخال  ماركة السيارة` : `Please type a car brand`
+        error.brand = lang === 'ar' ?  `برجاء ادخال  ماركة السيارة` : `Please type a car make`
     }
     if (!state.year) {
         error.year  = lang === 'ar' ? `برجاء ادخال سنة الصنع  ` : `Please type a Year` 
@@ -27,7 +27,7 @@ export const validationSellFom = (state, lang) => {
         error.mobile  = lang === 'ar' ?  `برجاء ادخال  رقم الهاتف ` : `Please type your phone number`
     }
     if (!state.modal) {
-        error.modal  = lang === 'ar' ?  `برجاء ادخال  طراز السيارة  ` : `Please type your car modal`
+        error.modal  = lang === 'ar' ?  `برجاء ادخال  طراز السيارة  ` : `Please type your a car modal`
     }
   
 

@@ -40,7 +40,7 @@ margin: 100px 0px;
     padding: 0px 100px;
     width: 100%;
     @media (max-width: 600px) {
-    padding: 50px 10px;
+    padding: 0px 10px;
 }
 }
 
@@ -51,7 +51,8 @@ ul{
 }
 li {
   padding-left: 1em; 
-  padding-right: 1em; 
+  padding-right: 1em;
+  line-height: 22px;
 
   text-indent: -2.1em;
   margin-bottom: 20px;
@@ -65,6 +66,12 @@ ul li::before {
   margin-left: 10px;
   margin-right: 10px;
   font-size: 12px;
+}
+.list-box{
+  padding:  20px;
+  @medi(max-width: 600px){
+    padding: 0px 20px;
+  }
 }
 
 

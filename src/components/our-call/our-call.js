@@ -18,7 +18,8 @@ export default class OurCall extends Component {
                         item xs={12} lg={6}
                         container
                         direction="row"
-                        style={{ padding: '20px' }}>
+                        className="list-box"
+                        >
                       
 
                         <ul style={{fontFamily: fontForLang()}} className="list">

@@ -48,7 +48,7 @@ class Form extends Component {
         if (value && value !== 'DEFAULT') {
             this.setState({ [state]: value, error: { ...this.state.error, [state]: "" } });
         } else {
-            this.setState({ [state]: value, error: { ...this.state.error, [state]: lang === 'ar' ? `برجاء ادخال ${placeholder}` : `Please Type ${placeholder}` } })
+            this.setState({ [state]: value, error: { ...this.state.error, [state]: lang === 'ar' ? `برجاء ادخال ${placeholder}` : `Please type  ${placeholder}` } })
         }
     }
 
@@ -65,7 +65,7 @@ class Form extends Component {
                     }}
                     onChange={(e) => this.onChangeValueInput(e.target.value, state, placeholder, localStorage.getItem("lang"))}
                     onBlur={(e) => this.onChangeValueInput(e.target.value, state, placeholder, localStorage.getItem("lang"))}
-                    className={`input ${state === 'fullName' ? 'foucs' : ''}`} placeholder={state === 'modal' ? 'YYYY' : placeholder} />
+                    className={`input ${state === 'fullName' ? 'foucs' : ''}`} placeholder={state === 'year' ? strings.yearPlaceHolder : placeholder} />
                 {
                     this.state.error[state] ? <div className="error-validation" style={{ fontFamily: fontForLang() }} > <p>{this.state.error[state]}</p></div> : ""
                 }
@@ -104,7 +104,7 @@ class Form extends Component {
                             </div>
                         </div> */}
                         <div className="video-desc">
-                            <h1 style={{ fontFamily: fontForLang() }}>{strings.whyYouShouldSellYourCar}</h1>
+                            <h1 style={{ fontFamily: fontForLang() }}>{strings.whyShouldYouSellYourCar}</h1>
                             <h6 style={{ fontFamily: fontForLang() }}>{strings.weSupportYouFromStartToFinish} </h6>
                             <h5 style={{ fontFamily: fontForLang() }}>{strings.weHaveStreamlind}</h5>
                             <p style={{ fontFamily: fontForLang() }}>{strings.readyToSell}</p>
@@ -133,7 +133,7 @@ class Form extends Component {
                                         </div>
 
                                         <div className="btn-submit-resend">
-                                            <Button style={{ fontFamily: fontForLang() }} className="btn-send" variant="contained" onClick={() => this.onPressReSend()}>{strings.sendYourInquiry}
+                                            <Button style={{ fontFamily: fontForLang() }} className="btn-send" variant="contained" onClick={() => this.onPressReSend()}>{strings.sendNewInquiry}
                                                 <i className={iconHandler()}></i>
                                             </Button>
                                         </div>
@@ -156,7 +156,7 @@ class Form extends Component {
                                                 onBlur={() => {
                                                     if (!this.state.brand) {
                                                         const lang = localStorage.getItem("lang");
-                                                        this.setState({error: {...this.state.error, brand: lang === 'ar' ? `برجاء ادخال ${strings.carBrand}` : `Please Type ${strings.carBrand}`}})
+                                                        this.setState({error: {...this.state.error, brand: lang === 'ar' ? `برجاء ادخال ${strings.carBrand}` : `Please type  a ${strings.carBrand}`}})
                                                     } else {
                                                         this.setState({error: {...this.state.error, brand: ''}})
 
@@ -181,7 +181,7 @@ class Form extends Component {
                                                 onBlur={() => {
                                                     if (!this.state.modal) {
                                                         const lang = localStorage.getItem("lang");
-                                                        this.setState({error: {...this.state.error, modal: lang === 'ar' ? `برجاء ادخال ${strings.carModel}` : `Please Type ${strings.carModel}`}})
+                                                        this.setState({error: {...this.state.error, modal: lang === 'ar' ? `برجاء ادخال ${strings.carModel}` : `Please type a  ${strings.carModel}`}})
                                                     } else {
                                                         this.setState({error: {...this.state.error, modal: ''}})
 
