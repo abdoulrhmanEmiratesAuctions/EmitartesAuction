@@ -27,7 +27,7 @@ export const FooterStyle = styled.div`
   line-height: 1.44;
   letter-spacing: -0.5px;
   color: #595f6f;
-  margin: 5px 0px
+  margin: 15px 0px
 }
 .sub-desc{
     font-family: Roboto;

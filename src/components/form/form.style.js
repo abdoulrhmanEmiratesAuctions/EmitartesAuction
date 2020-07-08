@@ -84,8 +84,10 @@ right-margin : {
 }
 .video-desc{
     width: 100%;
+    margin-top: 40px;
     @media (max-width: 900px) {
    text-align: center;
+   margin: auto 30px;
 }
     h1{
   font-family: Roboto;
@@ -139,7 +141,12 @@ right-margin : {
 }
 .inputs{
     width: 100%;
-
+@media(max-width: 900px) {
+    padding: 0px 30px;
+}
+@media(max-width: 400px) {
+    padding: 0px ;
+}
  .header-input{
     font-family: Roboto;
   font-size: 18px;
@@ -185,6 +192,11 @@ right-margin : {
   padding: 0px 30px;
   font-size: 16px;
   border-radius: 5px 5px;
+  box-sizing: border-box;
+  color: #595f6f;
+  @media(max-width: 900px) {
+    width: 100%;
+}
 }
 .btn-submit{
     margin-top: 50px;
@@ -197,7 +209,7 @@ right-margin : {
         box-shadow: 20px 20px 60px 0 rgba(0, 0, 0, 0.4);
         text-transform: none;
         padding: 0px 30px;
-    width: 250px;
+    width: auto;
         height: 50px;
         border-radius: 5px;
         background-color: #ec1c24;
@@ -229,8 +241,14 @@ right-margin : {
   line-height: normal;
   letter-spacing: normal;
   color: #ffffff;
-  padding: 10px 30px;
+  padding: 10px 0px;
   margin-bottom: 30px;
+  @media(max-width: 900px) {
+    width: 100%;
+}
+  p{
+      margin: 0px 30px;
+  }
 }
 .card-success{
     min-height: 500px;
@@ -268,6 +286,9 @@ right-margin : {
   letter-spacing: -0.33px;
   text-align: center;
   color: #595f6f;
+  @media(max-width: 900px){
+      padding: 0px 20px;
+  }
     }
 
 
@@ -295,6 +316,7 @@ right-margin : {
    
 }
 .error-validation{
+    
     background-color: #ec1c24;
     width: 80%;
     border-radius: 0px 0px 5px 5px;
@@ -310,7 +332,14 @@ right-margin : {
     line-height: normal;
     letter-spacing: normal;
     color: #ffffff;
-    padding: 10px 31px;
+    padding: 10px 0px;
+    @media(max-width: 900px) {
+        width: 100%;
+    }
+    p{
+        margin: 0px 30px;
+
+    }
 }
 
 .foucs:focus {

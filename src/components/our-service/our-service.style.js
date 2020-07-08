@@ -10,6 +10,9 @@ padding: 100px 0px;
 
 } 
 .header-service{
+    @media(max-width: 750px) {
+        margin: 0px 15px;
+    }
     h1{
         font-family: Roboto;
   font-size: 35px;

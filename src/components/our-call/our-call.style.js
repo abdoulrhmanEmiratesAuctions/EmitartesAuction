@@ -7,6 +7,9 @@ margin: 100px 0px;
 
 }
 .header-call{
+  @media (max-width: 750px) {
+    margin: 0px 15px;
+  }
  h1{
     font-family: Roboto;
   font-size: 35px;
@@ -48,6 +51,8 @@ ul{
 }
 li {
   padding-left: 1em; 
+  padding-right: 1em; 
+
   text-indent: -2.1em;
   margin-bottom: 20px;
   color: #595f6f;

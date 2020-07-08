@@ -4,13 +4,13 @@ export const validationSellFom = (state, lang) => {
     var d = new Date();
     var year = d.getFullYear();
     if (state.modal && (state.modal < 1980 || state.modal > year) ) {
-        error.modal  = lang === 'ar' ?  `برجاء ادخال  سنة الاصدار صحيحه  ` : `Please Make Sure The Year Is Valid`
+        error.modal  = lang === 'ar' ?  `برجاء ادخال  سنة الاصدار مابين 1980 و ${year}  ` : `Please Make The Year Between 1980 & ${year}`
     }
     if (state.modal.length !== 4) {
         error.modal  = lang === 'ar' ?  `برجاء ادخال  سنة الاصدار صحيحه  ` : `Please Make Sure The Year Is Valid`
     }
    
-    if (!state.brand || state.brand === 'Brand') {
+    if (!state.brand || state.brand === 'DEFUALT') {
        error.brand = lang === 'ar' ?  `برجاء ادخال العلامة التجارية` : `Please Type A Car Brand`
     }
     if (!state.modal) {

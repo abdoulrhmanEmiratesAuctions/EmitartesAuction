@@ -25,6 +25,9 @@ img{
     font-size: 18px;
     font-family: Almarai;
     align-self: center;
+    &:hover{
+      background: #ec1c24;
+    }
   @media (max-width: 600px) {
     width: 80px;
     height: 48px;

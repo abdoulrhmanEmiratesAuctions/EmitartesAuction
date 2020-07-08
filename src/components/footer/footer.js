@@ -17,7 +17,7 @@ export default class Footer extends Component {
                     <Container>
                         <Grid container spacing={0} style={{ width: '100%' }}>
                             <Grid
-                                item xs={4} lg={4}
+                                item xs={12} lg={4}
                                 container
                                 direction="row"
                                 justify="center"
@@ -27,7 +27,7 @@ export default class Footer extends Component {
 
                             </Grid>
                             <Grid
-                                item xs={4} lg={4}
+                                item xs={12} lg={4}
                                 container
                                 direction="row"
                                 justify="center"
@@ -42,7 +42,7 @@ export default class Footer extends Component {
                             </Grid>
 
                             <Grid
-                                item xs={4} lg={4}
+                                item xs={12} lg={4}
                                 container
                                 direction="row"
                                 justify="center"
