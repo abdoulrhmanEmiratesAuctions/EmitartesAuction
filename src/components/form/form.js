@@ -66,7 +66,7 @@ class Form extends Component {
         return (
             <div className="form-group">
                 <div className="label"><label className="" style={{ fontFamily: fontForLang() }}>{'Brand'}</label></div>
-                <select className="input" placeholder={'Brand'} 
+                <select defaultValue={'DEFAULT'} className="input" placeholder={'Brand'} 
                   onChange={(e) => this.onChangeValueInput(e.target.value, state, 'Brand', localStorage.getItem("lang"))}
                   onBlur={(e) => this.onChangeValueInput(e.target.value, state, 'Brand', localStorage.getItem("lang"))}
                   style={{
@@ -77,7 +77,7 @@ class Form extends Component {
                     width: '87.7%'
 
                 }}>
-                    <option selected hidden disabled>Brand</option>
+                    <option value="DEFAULT" hidden disabled>Brand</option>
                     <option>Test Option</option>
                 </select>
                 {

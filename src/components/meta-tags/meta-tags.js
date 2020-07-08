@@ -19,6 +19,10 @@ export default class MetaTags extends Component {
                 <title>بيع سيارتك المستعملة | الإمارات للمزادات | شركة رائدة في مجال المزادات</title>
                 <meta name="title" content="بيع سيارتك المستعملة | الإمارات للمزادات | شركة رائدة في مجال المزادات" />
                 <meta name="description" content="بيع سيارتك المستعملة من خلال الإمارات للمزادات أكبر سوق لمزادات السيارات في الإمارات العربية المتحدة" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <link rel="icon" href={process.env.PUBLIC_URL +  'favicon.ico'} />
+
+                <link rel="apple-touch-icon" href={process.env.PUBLIC_URL +  'logo192.png'} />
 
                 <meta name="Keywords" content="سيارات مستعملة, مركبات للبيع, حراج عربات, سوق سيارات, بيع سيارات مستعملة, مواقع بيع سيارات,  سيارات مستعملة للبيع في الامارات, حراج السيارات, بيع مركبات مستعملة" />
                 <meta name="Keywords" content="Used Cars For Sale, Sell My Car, Sell Cars Websites, Cars Market, Sell used Vehicles, Sell you motor, sell used motor, best car price, second hand cars, used cars" />
@@ -48,6 +52,10 @@ export default class MetaTags extends Component {
                 <meta name="title" content="Sell any car online | Emirates Auction | The Leading Auction Company in UAE" />
                 <meta name="description" content="Get the best price for your car on Emirates Auction and put it on the biggest car auction in the United Arab of Emirates" />
                 <meta name="Keywords" content="Used Cars For Sale, Sell My Car, Sell Cars Websites, Cars Market, Sell used Vehicles, Sell you motor, sell used motor, best car price, second hand cars, used cars" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <link rel="icon" href={process.env.PUBLIC_URL +  'favicon.ico'} />
+                <link rel="apple-touch-icon" href={process.env.PUBLIC_URL +  'logo192.png'} />
+
 
 
                 <meta property="og:title" content="Sell your car in Auction بيع السيارات بالمزاد" />
