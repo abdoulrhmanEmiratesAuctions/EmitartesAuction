@@ -4,12 +4,12 @@ export const validationSellFom = (state, lang) => {
     if (state.modal && (state.modal < 1980 || state.modal > 2020) ) {
         error.modal  = lang === 'ar' ?  `برجاء ادخال  سنة الاصدار صحيحه  ` : `Please Make Sure The Year Is Valid`
     }
-    if (state.modal.length != 4) {
+    if (state.modal.length !== 4) {
         error.modal  = lang === 'ar' ?  `برجاء ادخال  سنة الاصدار صحيحه  ` : `Please Make Sure The Year Is Valid`
 
     }
    
-    if (!state.brand || state.brand == 'Brand') {
+    if (!state.brand || state.brand === 'Brand') {
        error.brand = lang === 'ar' ?  `برجاء ادخال العلامة التجارية` : `Please Type A Car Brand`
     }
     if (!state.modal) {

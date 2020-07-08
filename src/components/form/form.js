@@ -55,7 +55,7 @@ class Form extends Component {
                     }}
                     onChange={(e) => this.onChangeValueInput(e.target.value, state, placeholder, localStorage.getItem("lang"))}
                     onBlur={(e) => this.onChangeValueInput(e.target.value, state, placeholder, localStorage.getItem("lang"))}
-                    className={`input ${state == 'fullName' ? 'foucs': ''}`} placeholder={state == 'modal' ? 'YYYY' : placeholder} />
+                    className={`input ${state === 'fullName' ? 'foucs': ''}`} placeholder={state === 'modal' ? 'YYYY' : placeholder} />
                 {
                     this.state.error[state] ? <div className="error-validation" style={{fontFamily: fontForLang()}} > {this.state.error[state]}</div> : ""
                 }
