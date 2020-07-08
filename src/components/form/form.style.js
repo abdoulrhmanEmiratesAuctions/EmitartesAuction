@@ -378,5 +378,6 @@ right-margin : {
   }
   .video-react{
     border-radius: 10px;
+    direction: ltr;
   }
 `
