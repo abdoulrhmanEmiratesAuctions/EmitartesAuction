@@ -104,7 +104,7 @@ class Form extends Component {
                         style={{ padding: '0px 20px' }}
                     >
                         <Player
-                            playsInline={true}
+                            playsInline={false}
                             height={330}
                             width={"100%"}
                             fluid={false}
