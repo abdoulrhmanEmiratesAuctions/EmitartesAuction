@@ -69,7 +69,7 @@ ul li::before {
 }
 .list-box{
   padding:  20px;
-  @medi(max-width: 600px){
+  @media(max-width: 900px){
     padding: 0px 20px;
   }
 }
