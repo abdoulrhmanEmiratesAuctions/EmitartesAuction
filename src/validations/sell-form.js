@@ -10,8 +10,11 @@ export const validationSellFom = (state, lang) => {
         error.modal  = lang === 'ar' ?  `برجاء ادخال  سنة الاصدار صحيحه  ` : `Please Make Sure The Year Is Valid`
     }
    
-    if (!state.brand || state.brand === 'DEFUALT') {
+    if (!state.brand) {
        error.brand = lang === 'ar' ?  `برجاء ادخال العلامة التجارية` : `Please Type A Car Brand`
+    }
+    if (state.brand === 'DEFAULT') {
+        error.brand = lang === 'ar' ?  `برجاء ادخال العلامة التجارية` : `Please Type A Car Brand`
     }
     if (!state.modal) {
         error.modal  = lang === 'ar' ? `برجاء ادخال الاصدار ` : `Please Type A Car Brand` 
