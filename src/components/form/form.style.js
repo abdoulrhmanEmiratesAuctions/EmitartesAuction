@@ -286,8 +286,10 @@ right-margin : {
   letter-spacing: -0.33px;
   text-align: center;
   color: #595f6f;
+  margin: 0px 40px;
   @media(max-width: 900px){
       padding: 0px 20px;
+
   }
     }
 
