@@ -1,12 +1,13 @@
 export const validationSellFom = (state, lang) => {
     
     let error = {}
-    if (state.modal && (state.modal < 1980 || state.modal > 2020) ) {
+    var d = new Date();
+    var year = d.getFullYear();
+    if (state.modal && (state.modal < 1980 || state.modal > year) ) {
         error.modal  = lang === 'ar' ?  `برجاء ادخال  سنة الاصدار صحيحه  ` : `Please Make Sure The Year Is Valid`
     }
     if (state.modal.length !== 4) {
         error.modal  = lang === 'ar' ?  `برجاء ادخال  سنة الاصدار صحيحه  ` : `Please Make Sure The Year Is Valid`
-
     }
    
     if (!state.brand || state.brand === 'Brand') {
