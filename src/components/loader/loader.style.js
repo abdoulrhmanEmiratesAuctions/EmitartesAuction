@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const LoaderStyle = styled.div`
 @media(max-width: 900px) {
-    height: 300px;
+    height: 100vh;
     .loader-div{
         width: 90% !important;
     }
