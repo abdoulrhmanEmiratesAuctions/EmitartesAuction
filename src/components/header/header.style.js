@@ -3,6 +3,10 @@ import styled from 'styled-components';
 export const HeaderStyle = styled.div`
 display: flex;
 justify-content: space-between;
+padding: 30px 140px;
+@media (max-width: 600px) {
+    padding: 15px 10px;
+}
 img{
     width: 250px;
     height: 75px;

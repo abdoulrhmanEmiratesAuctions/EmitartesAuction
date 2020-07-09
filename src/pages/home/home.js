@@ -19,9 +19,8 @@ export default class Home extends Component {
         return (
             <div>
                 <MetaTags></MetaTags>
-                <ContainerStyle>
                     <Header></Header>
-                </ContainerStyle>
+             
                 <Instructions></Instructions>
                 <Form></Form>
                 <OurService></OurService>
