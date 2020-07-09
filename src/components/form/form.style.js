@@ -324,7 +324,7 @@ right-margin : {
     width: 80%;
     border-radius: 0px 0px 5px 5px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     padding: 0px 30px;
     color: #fff;
     font-family: Roboto;

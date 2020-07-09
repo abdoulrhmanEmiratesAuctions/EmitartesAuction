@@ -22,7 +22,7 @@ export default class Instructions extends Component {
                         </div>
                         <div className="div-btn">
                             <Button onClick={this.onPressStartToday} style={{fontFamily: fontForLang()}} className="btn-start" variant="contained">{strings.startToday}
-                            <i className="fa fa-angle-down" aria-hidden="true"></i>
+                            <i className="fa fa-angle-double-down" aria-hidden="true"></i>
                             </Button>
                         </div>
                     </div>
