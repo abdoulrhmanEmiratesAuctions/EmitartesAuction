@@ -255,6 +255,9 @@ right-margin : {
     min-height: 500px;
   box-shadow: 20px 20px 80px 0 rgba(2, 8, 22, 0.1);
   background-color: #ffffff;
+  @media (max-width: 500px) {
+    padding: 20px 0px;
+  } 
 }
 .card-header{
     text-align: center;

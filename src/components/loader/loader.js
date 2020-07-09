@@ -8,7 +8,9 @@ export default class Loader extends Component {
     render() {
         return (
             <LoaderStyle >
-                <div className="loader"></div>
+               <div className="loader-div">
+               <div className="loader"></div>
+               </div>
             </LoaderStyle>
 
         )
