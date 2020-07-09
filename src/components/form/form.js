@@ -89,7 +89,7 @@ class Form extends Component {
                             width={"100%"}
                             fluid={false}
                             poster={require(`../../assets/images/ferrada_red_matte_bmw_m4_5k-t2.jpg`)}
-                            src={require('../../assets/images/WhatsApp Video 2020-07-08 at 1.43.57 AM.mp4')}>
+                            src={require('../../assets/videos/sellYourCar.mp4')}>
                             <BigPlayButton position="center" />
                         </Player>
 
