@@ -74,7 +74,7 @@ class Form extends Component {
 
             {
                 this.state.responseSuccess ?
-                    <div className="card-success">
+                    <div className="card-success" id="card-success">
                         <div className="card-header">
                             <img alt="image_3" src={require('../../assets/images/3739DED4-8F85-4F9D-BE06-DE2E456DD8E3.svg')} />
                         </div>
@@ -214,12 +214,16 @@ class Form extends Component {
             </FormStyle>
         )
     }
+    cardSuccessPostion = () => {
+        const element = document.getElementById("card-success");
+        element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+    }
     componentWillReceiveProps(nextProps) {
         if (!this.props.car.response && nextProps.car.response) {
             if (nextProps.car.response.message === "Network Error") {
                 this.setState({ responseError: true, disabled: false, showLoader: false });
             } else {
-                this.setState({ responseSuccess: true, disabled: false, responseError: false, showLoader: false });
+                this.setState({ responseSuccess: true, disabled: false, responseError: false, showLoader: false }, () => this.cardSuccessPostion());
             }
         }
         if (!this.props.brands.response && nextProps.brands.response) {
