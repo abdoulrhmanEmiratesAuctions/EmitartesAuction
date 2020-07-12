@@ -24,8 +24,8 @@ export default class OurCall extends Component {
 
                         <ul style={{fontFamily: fontForLang()}} className="list">
                             <li>{strings.doc1}</li>
-                            <li>{strings.doc4}</li>
                             <li>{strings.doc6}</li>
+                            <li>{strings.doc7}</li>
                         </ul>
                      
 
@@ -41,8 +41,9 @@ export default class OurCall extends Component {
                         <ul style={{fontFamily: fontForLang()}} className="list">
                            
                             
-                            <li>{strings.doc7}</li>
+                            
                             <li>{strings.doc8}</li>
+                            <li>{strings.doc4}</li>
                         </ul>
                     </Grid>
                 </Grid>
