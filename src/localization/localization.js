@@ -11,7 +11,7 @@ export let strings = new LocalizedStrings({
      submitYourCar: "Submit Your Car",
      enterYourCarDetails: "Enter your car details for inspection on Emirates Auction.",
      receiveOffer: "A Sales Representative will Contact You",
-     weWillCheckCar: "To agree on a suitable starting price and give you all on the info on the auction process.",
+     weWillCheckCar: "To agree on a suitable starting price and give you all the info on the auction process.",
      getThePayment: "Get Your Payment",
      afterPriceIsAgree: "After a price is agreed for your car, we will exchange cash on a day that suits you.",
      yourCarWillBeSold: "Your car will be sold by bidding",
@@ -44,7 +44,7 @@ export let strings = new LocalizedStrings({
     requiredDocs: "Required Documents & Procedures",
     doc1: "The car must be brought in good working condition; with minimum quarter fuel tank.",
     
-    doc4: "If the item is sold, the check will be deposit in your bank account after 10 working days from the time of auction’s conclusion.",
+    doc4: "If the item is sold, the check will be deposit in your bank account after 10 working days from the time of auction ending.",
     doc6: "For the classic cars, trucks and heavy equipment, an export test must be provided.",
     doc7: "For non moving items (generators, Scissorlifts, buggy, quad bike... etc) an original invoice/tax invoice is required.",
     doc8: "A full comprehensive test will be made by an authorized 3rd party company.",
