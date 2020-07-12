@@ -13,6 +13,9 @@ import { iconHandler } from '../../helper/angle-icon-handler';
 import { Player, BigPlayButton } from 'video-react';
 import { getBrandAction } from '../../redux/actions/brand.action';
 import Loader from '../loader/loader'
+import { getAllYears } from "../../helper/dynamic-years";
+import { DatePicker, InlineDatePicker } from "material-ui-pickers";
+import YearMonthPicker from '../year-input/year-input';
 
 class Form extends Component {
     constructor(props) {
@@ -29,7 +32,7 @@ class Form extends Component {
             modal: "",
             fullName: "",
             mobile: "",
-            year: ""
+            year: "",
         }
     }
     componentDidMount() {
@@ -37,7 +40,7 @@ class Form extends Component {
             this.setState({ responseError: false, error: { brand: "", modal: "", fullName: "", mobile: "", year: "" }, });
         });
         this.props.getBrandAction();
-
+  
     }
     onChangeValueInput = (value, state, placeholder, lang) => {
         if (value && value !== 'DEFAULT') {
@@ -72,92 +75,122 @@ class Form extends Component {
         return (
             <div className="inputs">
 
-            {
-                this.state.responseSuccess ?
-                    <div className="card-success" id="card-success">
-                        <div className="card-header">
-                            <img alt="image_3" src={require('../../assets/images/3739DED4-8F85-4F9D-BE06-DE2E456DD8E3.svg')} />
+                {
+                    this.state.responseSuccess ?
+                        <div className="card-success" id="card-success">
+                            <div className="card-header">
+                                <img alt="image_3" src={require('../../assets/images/3739DED4-8F85-4F9D-BE06-DE2E456DD8E3.svg')} />
+                            </div>
+
+                            <div className="card-content">
+                                <p style={{ fontFamily: fontForLang() }} className="done-desc">{strings.successHeader}</p>
+                                <p style={{ fontFamily: fontForLang() }} className="done-content">{strings.successContent}</p>
+                            </div>
+
+                            <div className="btn-submit-resend">
+                                <Button style={{ fontFamily: fontForLang() }} className="btn-send" variant="contained" onClick={() => this.onPressReSend()}>{strings.sendNewInquiry}
+                                    <i className={iconHandler()}></i>
+                                </Button>
+                            </div>
                         </div>
+                        :
+                        <div>
+                            {this.state.responseError ? <div style={{ fontFamily: fontForLang() }} className="error-toast"><p>{strings.errorMsgResponse}</p></div> : ""}
+                            {/* <div style={{ fontFamily: fontForLang() }} className="header-input">  {strings.enterCarDetail}</div> */}
 
-                        <div className="card-content">
-                            <p style={{ fontFamily: fontForLang() }} className="done-desc">{strings.successHeader}</p>
-                            <p style={{ fontFamily: fontForLang() }} className="done-content">{strings.successContent}</p>
+                            <div className="form-group">
+                                <div className="label" style={{ marginTop: '0px' }}><label className="" style={{ fontFamily: fontForLang() }}>{strings.carBrand}</label></div>
+                                <Autocomplete
+                                    options={this.state.brands}
+                                    style={{ border: '0px', color: '#595f6f', }}
+                                    getOptionLabel={(option) => option.Make}
+                                    onChange={(e, newValue) => { this.setState({ modals: newValue.Models, brand: newValue.Make, error: { ...this.state.error, brand: '' } }) }}
+                                    onBlur={() => {
+                                        if (!this.state.brand) {
+                                            const lang = localStorage.getItem("lang");
+                                            this.setState({ error: { ...this.state.error, brand: lang === 'ar' ? `برجاء ادخال ${strings.carBrand}` : `Please type  a ${strings.carBrand}` } })
+                                        } else {
+                                            this.setState({ error: { ...this.state.error, brand: '' } })
+
+                                        }
+                                    }}
+
+                                    renderInput={(params) => <TextField style={{ padding: '0px 10px' }} className="input" {...params} placeholder={strings.carBrand} variant="outlined" />}
+                                />
+                                {
+                                    this.state.error.brand ? <div className="error-validation" style={{ fontFamily: fontForLang() }} ><p>{this.state.error.brand}</p>
+                                    </div> : ""
+                                }
+                            </div>
+
+                            <div className="form-group">
+                                <div className="label"><label className="" style={{ fontFamily: fontForLang() }}>{strings.carModel}</label></div>
+                                <Autocomplete
+                                    options={this.state.modals}
+                                    style={{ border: '0px', color: '#595f6f', }}
+                                    getOptionLabel={(option) => option}
+                                    onChange={(e, newValue) => { this.setState({ modal: newValue, error: { ...this.state.error, modal: '' } }) }}
+                                    onBlur={() => {
+                                        if (!this.state.modal) {
+                                            const lang = localStorage.getItem("lang");
+                                            this.setState({ error: { ...this.state.error, modal: lang === 'ar' ? `برجاء ادخال ${strings.carModel}` : `Please type a  ${strings.carModel}` } })
+                                        } else {
+                                            this.setState({ error: { ...this.state.error, modal: '' } })
+
+                                        }
+                                    }}
+                                    renderInput={(params) => <TextField style={{ padding: '0px 10px' }} className="input" {...params} placeholder={strings.carModel} variant="outlined" />}
+                                />
+                                {
+                                    this.state.error.modal ? <div className="error-validation" style={{ fontFamily: fontForLang() }} ><p>{this.state.error.modal}</p>
+                                    </div> : ""
+                                }
+                            </div>
+
+                            <div className="form-group">
+                                <div className="label"><label className="" style={{ fontFamily: fontForLang() }}>{strings.year}</label></div>
+                                {/* <Autocomplete
+                                    options={this.state.years}
+                                    style={{ border: '0px', color: '#595f6f', }}
+                                    getOptionLabel={(option) => option}
+                                    onChange={(e, newValue) => { this.setState({ year: newValue, error: { ...this.state.error, year: '' } }) }}
+                                    onBlur={() => {
+                                        if (!this.state.year) {
+                                            const lang = localStorage.getItem("lang");
+                                            this.setState({ error: { ...this.state.error, year: lang === 'ar' ? `برجاء ادخال ${strings.year}` : `Please type a  ${strings.year}` } })
+                                        } else {
+                                            this.setState({ error: { ...this.state.error, year: '' } })
+
+                                        }
+                                    }}
+                                    renderInput={(params) => <TextField style={{ padding: '0px 10px' }} className="input" {...params} placeholder={strings.year} variant="outlined" />}
+                                />
+                                 {
+                                    this.state.error.year ? <div className="error-validation" style={{ fontFamily: fontForLang() }} ><p>{this.state.error.year}</p>
+                                    </div> : ""
+                                } */}
+                                <YearMonthPicker year={(year) => {this.setState({year: year})}}/>
+
+                            
+                            </div>
+
+
+
+
+                            <div className="label"></div>
+                            {/* <div className="header-input" style={{ fontFamily: fontForLang() }} >  {strings.enterYourContactInfo}</div> */}
+                            {this.renderInputs("text", "fullName", strings.yourFullName)}
+                            {this.renderInputs("number", "mobile", strings.yourMobileNumber)}
+
+
+                            <div className="btn-submit">
+                                <Button style={{ fontFamily: fontForLang() }} disabled={this.state.disabled} className="btn-send" variant="contained" onClick={() => this.onPressSend()}>{strings.sendYourInquiry}
+                                    <i className={iconHandler()}></i>
+                                </Button>
+                            </div>
                         </div>
-
-                        <div className="btn-submit-resend">
-                            <Button style={{ fontFamily: fontForLang() }} className="btn-send" variant="contained" onClick={() => this.onPressReSend()}>{strings.sendNewInquiry}
-                                <i className={iconHandler()}></i>
-                            </Button>
-                        </div>
-                    </div>
-                    :
-                    <div>
-                        {this.state.responseError ? <div style={{ fontFamily: fontForLang() }} className="error-toast"><p>{strings.errorMsgResponse}</p></div> : ""}
-                        {/* <div style={{ fontFamily: fontForLang() }} className="header-input">  {strings.enterCarDetail}</div> */}
-
-                        <div className="form-group">
-                            <div className="label" style={{ marginTop: '0px' }}><label className="" style={{ fontFamily: fontForLang() }}>{strings.carBrand}</label></div>
-                            <Autocomplete
-                                options={this.state.brands}
-                                style={{ border: '0px', color: '#595f6f', }}
-                                getOptionLabel={(option) => option.Make}
-                                onChange={(e, newValue) => { this.setState({ modals: newValue.Models, brand: newValue.Make, error: { ...this.state.error, brand: '' } }) }}
-                                onBlur={() => {
-                                    if (!this.state.brand) {
-                                        const lang = localStorage.getItem("lang");
-                                        this.setState({ error: { ...this.state.error, brand: lang === 'ar' ? `برجاء ادخال ${strings.carBrand}` : `Please type  a ${strings.carBrand}` } })
-                                    } else {
-                                        this.setState({ error: { ...this.state.error, brand: '' } })
-
-                                    }
-                                }}
-
-                                renderInput={(params) => <TextField style={{ padding: '0px 10px' }} className="input" {...params} placeholder={strings.carBrand} variant="outlined" />}
-                            />
-                            {
-                                this.state.error.brand ? <div className="error-validation" style={{ fontFamily: fontForLang() }} ><p>{this.state.error.brand}</p>
-                                </div> : ""
-                            }
-                        </div>
-
-                        <div className="form-group">
-                            <div className="label"><label className="" style={{ fontFamily: fontForLang() }}>{strings.carModel}</label></div>
-                            <Autocomplete
-                                options={this.state.modals}
-                                style={{ border: '0px', color: '#595f6f', }}
-                                getOptionLabel={(option) => option}
-                                onChange={(e, newValue) => { this.setState({ modal: newValue, error: { ...this.state.error, modal: '' } }) }}
-                                onBlur={() => {
-                                    if (!this.state.modal) {
-                                        const lang = localStorage.getItem("lang");
-                                        this.setState({ error: { ...this.state.error, modal: lang === 'ar' ? `برجاء ادخال ${strings.carModel}` : `Please type a  ${strings.carModel}` } })
-                                    } else {
-                                        this.setState({ error: { ...this.state.error, modal: '' } })
-
-                                    }
-                                }}
-                                renderInput={(params) => <TextField style={{ padding: '0px 10px' }} className="input" {...params} placeholder={strings.carModel} variant="outlined" />}
-                            />
-                            {
-                                this.state.error.modal ? <div className="error-validation" style={{ fontFamily: fontForLang() }} ><p>{this.state.error.modal}</p>
-                                </div> : ""
-                            }
-                        </div>
-                        {this.renderInputs("number", "year", strings.year)}
-
-                        <div className="label"></div>
-                        {/* <div className="header-input" style={{ fontFamily: fontForLang() }} >  {strings.enterYourContactInfo}</div> */}
-                        {this.renderInputs("text", "fullName", strings.yourFullName)}
-                        {this.renderInputs("number", "mobile", strings.yourMobileNumber)}
-
-                        <div className="btn-submit">
-                            <Button style={{ fontFamily: fontForLang() }} disabled={this.state.disabled} className="btn-send" variant="contained" onClick={() => this.onPressSend()}>{strings.sendYourInquiry}
-                                <i className={iconHandler()}></i>
-                            </Button>
-                        </div>
-                    </div>
-            }
-        </div>
+                }
+            </div>
         )
     }
 
@@ -206,7 +239,7 @@ class Form extends Component {
 
                         {
                             !this.state.showLoader && this.renderForm()
-                
+
                         }
                     </Grid>
 
