@@ -2,7 +2,36 @@ import React, { Fragment, useState, useEffect } from "react";
 import { DatePicker, InlineDatePicker, MuiPickersUtilsProvider } from "material-ui-pickers";
 import MomentUtils from '@date-io/moment';
 import { YearStyle } from "./year-input.style";
-import * as moment from "moment";
+import { createMuiTheme } from "@material-ui/core";
+import { ThemeProvider } from "@material-ui/styles";
+import moment from 'moment';
+
+const materialTheme = createMuiTheme({
+  overrides: {
+    MuiPickersToolbar: {
+      toolbar: {
+        backgroundColor: "#ec1c24",
+      },
+    },
+    MuiPickersCalendarHeader: {
+    },
+    MuiPickersDay: {
+      day: {
+      },
+      daySelected: {
+      },
+      dayDisabled: {
+      },
+      current: {
+      },
+    },
+    MuiPickersModal: {
+      dialogAction: {
+      },
+    },
+  },
+});
+
 function YearMonthPicker(props) {
     const [selectedDate, handleDateChange] = useState(moment().format("yyyy"));
     useEffect(() => {
@@ -13,6 +42,7 @@ function YearMonthPicker(props) {
         <MuiPickersUtilsProvider utils={MomentUtils}>
             <Fragment>
                 <YearStyle className="picker">
+                <ThemeProvider theme={materialTheme}>
                     <DatePicker
                         maxDate="2020-01-01"
                         minDate="1990-01-01"
@@ -33,6 +63,7 @@ function YearMonthPicker(props) {
 
                         animateYearScrolling={false}
                     />
+                    </ThemeProvider>
                 </YearStyle>
             </Fragment>
         </MuiPickersUtilsProvider>

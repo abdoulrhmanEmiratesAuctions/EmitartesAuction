@@ -18,6 +18,11 @@ export const YearStyle = styled.div`
     padding: 15px 0px;
 
   }
+
+  .MuiPickersToolbar-toolbar {
+    
+    background-color: #EC1C24 !important;
+}
   .MuiInput-underline:hover:not(.Mui-disabled):before{
     border: 0px;
 
