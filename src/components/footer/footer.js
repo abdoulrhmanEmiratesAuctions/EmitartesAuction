@@ -99,9 +99,7 @@ export default class Footer extends Component {
                                             <img alt="image_4" src={require('../../assets/images/6CAE6CF1-1A1C-417A-BABF-D67829F0BD8E.svg')} />
                                         </a>
 
-                                        <a href="https://plus.google.com/+EmiratesauctionUAE/" rel="noopener noreferrer" target="_blank" className="icon">
-                                            <img alt="image_4" src={require('../../assets/images/290799E6-8B87-47C8-8014-9CF316A18DB5.svg')} />
-                                        </a>
+                                      
                                        
 
                                     </div>

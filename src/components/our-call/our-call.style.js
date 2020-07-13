@@ -54,7 +54,7 @@ li {
   padding-right: 1em;
   line-height: 22px;
 
-  text-indent: -2.1em;
+  text-indent: -1.7em;
   margin-bottom: 20px;
   color: #595f6f;
   font-size: 18px;
