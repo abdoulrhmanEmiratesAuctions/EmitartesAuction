@@ -14,6 +14,8 @@ function YearMonthPicker(props) {
             <Fragment>
                 <YearStyle className="picker">
                     <DatePicker
+                        maxDate="2020-01-01"
+                        minDate="2000-01-01"
                         disableFuture
                         autoOk
                         views={["year"]}

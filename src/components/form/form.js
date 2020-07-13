@@ -13,8 +13,6 @@ import { iconHandler } from '../../helper/angle-icon-handler';
 import { Player, BigPlayButton } from 'video-react';
 import { getBrandAction } from '../../redux/actions/brand.action';
 import Loader from '../loader/loader'
-import { getAllYears } from "../../helper/dynamic-years";
-import { DatePicker, InlineDatePicker } from "material-ui-pickers";
 import YearMonthPicker from '../year-input/year-input';
 
 class Form extends Component {
