@@ -15,8 +15,9 @@ function YearMonthPicker(props) {
                 <YearStyle className="picker">
                     <DatePicker
                         maxDate="2020-01-01"
-                        minDate="2000-01-01"
+                        minDate="1990-01-01"
                         disableFuture
+                     
                         autoOk
                         views={["year"]}
                         value={selectedDate}
@@ -30,7 +31,7 @@ function YearMonthPicker(props) {
                             }
                         }}
 
-                        animateYearScrolling
+                        animateYearScrolling={false}
                     />
                 </YearStyle>
             </Fragment>
